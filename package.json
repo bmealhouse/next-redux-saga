@@ -19,8 +19,7 @@
     "precommit": "lint-staged",
     "prepush": "yarn run build",
     "prettier": "prettier --no-semi --single-quote --no-bracket-spacing --write lib/*.js",
-    "prerelease": "yarn run build",
-    "release": "yarn version && git push --tags && release",
+    "release": "yarn version && git push origin master --tags && release",
     "start": "next",
     "test": "jest"
   },
