@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "ie": 9,
+          "uglify": true
+        },
+        "useBuiltIns": false,
+        "modules": "commonjs"
+      }
+    ],
+    "react-app"
+  ]
+}

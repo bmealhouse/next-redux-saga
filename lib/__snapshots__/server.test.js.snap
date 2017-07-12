@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wrapped component awaits async getInitialProps 1`] = `
+<div>
+  Async
+</div>
+`;
+
+exports[`wrapped component awaits sync getInitialProps 1`] = `
+<div>
+  Sync
+</div>
+`;
+
+exports[`wrapped component passes along props 1`] = `
+<div>
+  Hello !
+</div>
+`;
+
+exports[`wrapped component skips getInitialProps 1`] = `
+<div>
+  Skip
+</div>
+`;

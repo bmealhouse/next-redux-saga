@@ -1,0 +1,100 @@
+{
+  "name": "next-redux-saga",
+  "version": "0.1.0",
+  "description": "redux-saga HOC for Next.js",
+  "main": "dist/index.js",
+  "repository": "https://github.com/bmealhouse/next-redux-saga.git",
+  "author": "Brent Mealhouse <bmealhouse@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.11.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "yarn run lint && yarn test",
+    "build": "NODE_ENV=production babel lib/index.js -o dist/index.js",
+    "lint": "xo",
+    "precommit": "lint-staged",
+    "prepush": "yarn run build",
+    "prettier": "prettier --no-semi --single-quote --no-bracket-spacing --write lib/*.js",
+    "prerelease": "yarn run build",
+    "release": "yarn version && git push --tags && release",
+    "start": "next",
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "verbose": true
+  },
+  "lint-staged": {
+    "lib/*.js": [
+      "yarn run lint",
+      "yarn run prettier",
+      "git add"
+    ]
+  },
+  "xo": {
+    "envs": [
+      "jest"
+    ],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+      "capitalized-comments": 0
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "20.0.3",
+    "babel-preset-env": "1.6.0",
+    "enzyme": "2.9.1",
+    "enzyme-to-json": "1.5.1",
+    "eslint-config-prettier": "2.3.0",
+    "eslint-plugin-react": "7.1.0",
+    "husky": "0.14.3",
+    "jest": "20.0.4",
+    "lint-staged": "4.0.1",
+    "next": "2.4.7",
+    "next-redux-wrapper": "1.2.0",
+    "prettier": "1.5.2",
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-redux": "5.0.5",
+    "react-test-renderer": "15.6.1",
+    "redux": "3.7.1",
+    "redux-saga": "0.15.4",
+    "release": "1.2.3",
+    "xo": "0.18.2"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "next-redux-wrapper": "*",
+    "react": "*",
+    "react-redux": "*",
+    "redux": "*",
+    "redux-saga": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/bmealhouse/next-redux-saga/issues"
+  },
+  "homepage": "https://github.com/bmealhouse/next-redux-saga#readme",
+  "keywords": [
+    "next",
+    "nextjs",
+    "Next.js",
+    "next-redux",
+    "next-redux-wrapper",
+    "react",
+    "react-redux",
+    "redux",
+    "redux-saga"
+  ]
+}
