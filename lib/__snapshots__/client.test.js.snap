@@ -1,24 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`wrapped component awaits async getInitialProps 1`] = `
+exports[`wrapped component awaits async getInitialProps in async mode 1`] = `
 <div>
   Async
 </div>
 `;
 
-exports[`wrapped component awaits sync getInitialProps 1`] = `
+exports[`wrapped component awaits async getInitialProps in sync mode 1`] = `
+<div>
+  Async
+</div>
+`;
+
+exports[`wrapped component awaits sync getInitialProps in async mode 1`] = `
 <div>
   Sync
 </div>
 `;
 
-exports[`wrapped component passes along props 1`] = `
+exports[`wrapped component awaits sync getInitialProps in sync mode 1`] = `
+<div>
+  Sync
+</div>
+`;
+
+exports[`wrapped component passes along props in async mode 1`] = `
 <div>
   Hello !
 </div>
 `;
 
-exports[`wrapped component skips getInitialProps 1`] = `
+exports[`wrapped component passes along props in sync mode 1`] = `
+<div>
+  Hello !
+</div>
+`;
+
+exports[`wrapped component skips getInitialProps in async mode 1`] = `
+<div>
+  Skip
+</div>
+`;
+
+exports[`wrapped component skips getInitialProps in sync mode 1`] = `
 <div>
   Skip
 </div>

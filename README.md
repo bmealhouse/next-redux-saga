@@ -83,7 +83,8 @@ function configureStore(initialState) {
     applyMiddleware(sagaMiddleware)
   )
 
-  // NOTE: you must attach `sagaTask` to the store
+  // NOTE: you must attach `sagaTask` to the store.
+  // NOTE: next-redux-saga will use `runSagaTask` and init new example of `rootSaga` on every page in sync mode
   store.runSagaTask = () => {
     store.sagaTask = sagaMiddleware.run(rootSaga)
   }
@@ -126,6 +127,13 @@ class ExamplePage extends Component {
 
 export default withRedux(configureStore, state => state)(
   withReduxSaga(ExamplePage)
+)
+```
+
+If you do not want wait until saga's task is done on client side, then put `async` option in `next-redux-saga` decorator
+```javascript
+export default withRedux(configureStore, state => state)(
+  withReduxSaga({ async: true })(ExamplePage)
 )
 ```
 
