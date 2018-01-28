@@ -139,14 +139,9 @@ export default withRedux(configureStore, state => state)(
 
 ## Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars0.githubusercontent.com/u/3741255?v=3" width="100px;"/><br /><sub>Brent Mealhouse</sub>](https://twitter.com/bmealhouse)<br />[💻](https://github.com/bmealhouse/next-redux-saga/commits?author=bmealhouse "Code") [📖](https://github.com/bmealhouse/next-redux-saga/commits?author=bmealhouse "Documentation") [⚠️](https://github.com/bmealhouse/next-redux-saga/commits?author=bmealhouse "Tests") |
-| :---: |
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+[![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser)
+---|---
+[Brent Mealhouse](https://github.com/bmealhouse) | [Artem Abzanov](https://github.com/JerryCauser)
 
 ## Contributing
 
