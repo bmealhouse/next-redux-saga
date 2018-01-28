@@ -1,0 +1,12 @@
+# See https://prettier.io/docs/en/ignore.html for more about ignoring files.
+
+# build
+/.next
+/dist
+
+# test
+/coverage
+
+# misc
+package.json
+README.md
