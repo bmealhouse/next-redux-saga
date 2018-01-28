@@ -85,15 +85,9 @@ class ExamplePage extends Component {
   render() {
     return (
       <ul>
-        <li>
-          prop from getInitialProps: {this.props.static}
-        </li>
-        <li>
-          prop from redux: {this.props.redux}
-        </li>
-        <li>
-          prop from redux-saga: {this.props.reduxSaga}
-        </li>
+        <li>prop from getInitialProps: {this.props.static}</li>
+        <li>prop from redux: {this.props.redux}</li>
+        <li>prop from redux-saga: {this.props.reduxSaga}</li>
       </ul>
     )
   }
