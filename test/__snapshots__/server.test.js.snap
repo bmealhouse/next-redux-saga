@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wrapped component awaits asynchronous getInitialProps (sync) 1`] = `
+<div>
+  AsyncGetInitialProps({"mode":"sync","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
+</div>
+`;
+
+exports[`Wrapped component awaits asynchronous getInitialProps (sync) 2`] = `
+<div>
+  AsyncGetInitialProps({"mode":"async","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
+</div>
+`;
+
+exports[`Wrapped component awaits synchronous getInitialProps (async) 1`] = `
+<div>
+  SyncGetInitialProps({"mode":"async","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux"})
+</div>
+`;
+
+exports[`Wrapped component awaits synchronous getInitialProps (sync) 1`] = `
+<div>
+  SyncGetInitialProps({"mode":"sync","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux"})
+</div>
+`;
+
+exports[`Wrapped component passes along React props (async) 1`] = `
+<div>
+  FunctionalComponent({"mode":"async"})
+</div>
+`;
+
+exports[`Wrapped component passes along React props (sync) 1`] = `
+<div>
+  FunctionalComponent({"mode":"sync"})
+</div>
+`;
+
+exports[`Wrapped component skips getInitialProps when it does not exist (async) 1`] = `
+<div>
+  ClassComponent({"mode":"async"})
+</div>
+`;
+
+exports[`Wrapped component skips getInitialProps when it does not exist (sync) 1`] = `
+<div>
+  ClassComponent({"mode":"sync"})
+</div>
+`;

@@ -3,9 +3,9 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-function configureStore(initialState) {
-  const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware()
 
+function configureStore(initialState) {
   const store = createStore(
     rootReducer,
     initialState,

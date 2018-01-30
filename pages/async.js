@@ -1,11 +1,19 @@
 import React, {Component} from 'react'
 import {string} from 'prop-types'
 import withRedux from 'next-redux-wrapper'
-import withReduxSaga from '../lib'
-import App from './_components/app'
-import configureStore from './_store/configure-store'
+import withReduxSaga from '../'
+import configureStore from '../test/store/configure-store'
+import App from './_app-component'
 
-class DefaultExample extends Component {
+import {
+  GET_SYNC_REDUX_PROP_TYPE,
+  GET_ASYNC_REDUX_SAGA_PROP_TYPE,
+  RESET_STORE_TYPE,
+  STATIC_PROP_TEXT,
+  SYNC_REDUX_PROP_TEXT
+} from '../test/constants'
+
+class AsyncExample extends Component {
   static propTypes = {
     staticProp: string,
     syncReduxProp: string,
@@ -13,15 +21,15 @@ class DefaultExample extends Component {
   }
 
   static async getInitialProps({store}) {
-    store.dispatch({type: 'RESET_STORE'})
+    store.dispatch({type: RESET_STORE_TYPE})
 
     store.dispatch({
-      type: 'GET_SYNC_REDUX_PROP',
-      data: 'Synchronous message from Redux.'
+      type: GET_SYNC_REDUX_PROP_TYPE,
+      data: SYNC_REDUX_PROP_TEXT
     })
 
-    store.dispatch({type: 'GET_ASYNC_REDUX_SAGA_PROP'})
-    return {staticProp: 'Static message from getInitialProps().'}
+    store.dispatch({type: GET_ASYNC_REDUX_SAGA_PROP_TYPE})
+    return {staticProp: STATIC_PROP_TEXT}
   }
 
   render() {
@@ -53,5 +61,5 @@ class DefaultExample extends Component {
 }
 
 export default withRedux(configureStore, state => state)(
-  withReduxSaga({async: true})(DefaultExample)
+  withReduxSaga({async: true})(AsyncExample)
 )
