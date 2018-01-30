@@ -13,6 +13,12 @@ class App extends Component {
     children: node
   }
 
+  componentDidMount() {
+    if (typeof window === 'undefined') return
+    Router.prefetch('/sync')
+    Router.prefetch('/async')
+  }
+
   handleClick = e => {
     e.preventDefault()
     e.target.classList.add('spinner')
