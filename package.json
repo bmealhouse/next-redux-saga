@@ -38,6 +38,7 @@
   },
   "xo": {
     "envs": [
+      "browser",
       "jest"
     ],
     "extends": [
