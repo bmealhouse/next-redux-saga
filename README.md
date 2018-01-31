@@ -12,65 +12,26 @@
 yarn add next-redux-saga
 ```
 
+## Getting Started
+
+Check out the official [Next.js example](https://github.com/zeit/next.js/tree/canary/examples/with-redux-saga) or clone this repository and run the local example.
+
+### Try the local example
+
+1. Clone this repository
+1. Install dependencies: `yarn`
+1. Start the project: `yarn start`
+1. Open [http://localhost:3000](http://localhost:3000)
+
 ## Usage
 
 `next-redux-saga` uses the redux store created by [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper).  Please refer to their documentation for more information.
 
-The working example below is based off [pages/index.js](https://github.com/bmealhouse/next-redux-saga/blob/master/pages/index.js).
-
-> **Try it out:**
->
-> 1. Clone this repository
-> 2. Install dependencies: `yarn`
-> 3. Start the project: `yarn start`
-> 4. Visit [http://localhost:3000](http://localhost:3000)
-
-**root-reducer.js**
+### Configure Store
 
 ```js
-function rootReducer(state = {}, action) {
-  switch (action.type) {
-    case 'GET_REDUX_PROP':
-      return {...state, redux: action.data}
-    case 'GET_REDUX_SAGA_PROP_SUCCESS':
-      return {...state, reduxSaga: action.data}
-    default:
-      return state
-  }
-}
-```
-
-**root-saga.js**
-
-```js
-import {delay} from 'redux-saga'
-import {all, call, put, takeEvery} from 'redux-saga/effects'
-
-function helloSaga() {
-  console.log('Hello Saga!')
-}
-
-function* getReduxSagaPropSaga() {
-  yield call(delay, 500)
-  yield put({
-    type: 'GET_REDUX_SAGA_PROP_SUCCESS',
-    data: 'Hello redux-saga!'
-  })
-}
-
-function* rootSaga() {
-  yield all([
-    call(helloSaga),
-    takeEvery('GET_REDUX_SAGA_PROP', getReduxSagaPropSaga)
-  ])
-}
-```
-
-**configure-store.js**
-
-```js
-import createSagaMiddleware from 'redux-saga'
 import {createStore, applyMiddleware} from 'redux'
+import createSagaMiddleware from 'redux-saga'
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
@@ -82,46 +43,43 @@ function configureStore(initialState) {
     initialState,
     applyMiddleware(sagaMiddleware)
   )
+  
+  /**
+   * next-redux-saga depends on `runSagaTask` and `sagaTask` being attached to the store.
+   * 
+   *   `runSagaTask` is used to rerun the rootSaga on the client when in sync mode (default)
+   *   `sagaTask` is used to await the rootSaga task before sending results to the client
+   *   
+   */
 
-  // NOTE: you must attach `sagaTask` to the store.
-  // NOTE: next-redux-saga will use `runSagaTask` and init new example of `rootSaga` on every page in sync mode
   store.runSagaTask = () => {
     store.sagaTask = sagaMiddleware.run(rootSaga)
   }
+
+  // run the rootSaga initially
   store.runSagaTask()
   return store
 }
+
+export default configureStore
 ```
 
-**example-page.js**
+### Wrap Page Component
 
 ```js
 import React, {Component} from 'react'
-import {string} from 'prop-types'
 import withRedux from 'next-redux-wrapper'
 import withReduxSaga from 'next-redux-saga'
+import configureStore from './configure-store'
 
 class ExamplePage extends Component {
-  static propTypes = {
-    static: string,
-    redux: string,
-    reduxSaga: string
-  }
-
   static async getInitialProps({store}) {
-    store.dispatch({type: 'GET_REDUX_PROP', data: 'Hello redux!'})
-    store.dispatch({type: 'GET_REDUX_SAGA_PROP'})
-    return {static: 'Hello static!'}
+    store.dispatch({type: 'SOME_ASYNC_ACTION_REQUEST'})
+    return {staticData: 'Hello world!'}
   }
 
   render() {
-    return (
-      <ul>
-        <li>prop from getInitialProps: {this.props.static}</li>
-        <li>prop from redux: {this.props.redux}</li>
-        <li>prop from redux-saga: {this.props.reduxSaga}</li>
-      </ul>
-    )
+    return <div>{this.props.staticData}</div>
   }
 }
 
@@ -130,11 +88,18 @@ export default withRedux(configureStore, state => state)(
 )
 ```
 
-If you do not want wait until saga's task is done on client side, then put `async` option in `next-redux-saga` decorator
-```javascript
-export default withRedux(configureStore, state => state)(
-  withReduxSaga({ async: true })(ExamplePage)
-)
+### Sync vs. Async API
+
+To be consistent with how Next.js works, `next-redux-saga` defaults to **sync mode** in version 2.x.  When you trigger a route change on the client, your browser **WILL NOT** navigate to the new page until `getInitialProps()` has completed running all it's asynchronous tasks.
+
+For backwards compatibility with 1.x, **async mode** is still supported, however it is no longer the default behavior.  When you trigger a route change on the client in async mode, your browser **WILL** navigate to the new page immediately and continue to carry out the asynchronous tasks from `getInitialProps()`.  When the asynchronous tasks have completed, React will rerender the components necessary to display the async data.
+
+```js
+// sync mode
+withReduxSaga(ExamplePage)
+
+// async mode
+withReduxSaga({async: true})(ExamplePage)
 ```
 
 ## Contributors
@@ -146,10 +111,10 @@ export default withRedux(configureStore, state => state)(
 ## Contributing
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
-2. Install the dependecies: `yarn`
-3. Link the package to the global module directory: `yarn link`
-4. Run `yarn test -- --watch` and start making your changes
-5. You can use `yarn link next-redux-saga` to test your changes in an actual project
+1. Install the dependecies: `yarn`
+1. Link the package to the global module directory: `yarn link`
+1. Run `yarn test --watch` and start making your changes
+1. You can use `yarn link next-redux-saga` to test your changes in an actual project
 
 ## LICENSE
 
