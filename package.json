@@ -2,18 +2,21 @@
   "name": "next-redux-saga",
   "version": "1.0.1",
   "description": "redux-saga HOC for Next.js",
-  "main": "dist/index.js",
   "repository": "https://github.com/bmealhouse/next-redux-saga.git",
   "author": "Brent Mealhouse <bmealhouse@gmail.com>",
   "license": "MIT",
+  "main": "dist/next-redux-saga.umd.js",
+  "jsnext:main": "dist/next-redux-saga.es.js",
+  "module": "dist/next-redux-saga.es.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production babel lib/index.js -o dist/index.js",
+    "build": "rollup --config",
     "format": "prettier --write",
     "precommit": "xo && lint-staged",
     "prepush": "xo && yarn test",
+    "prerelease": "yarn build",
     "release": "yarn version && git push origin master --tags && release",
     "start": "next",
     "test": "jest"
@@ -53,11 +56,12 @@
     }
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.0.2",
     "babel-jest": "22.1.0",
     "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-3": "6.24.1",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-to-json": "3.3.1",
@@ -78,6 +82,8 @@
     "redux": "3.7.2",
     "redux-saga": "0.16.0",
     "release": "3.1.5",
+    "rollup": "0.55.1",
+    "rollup-plugin-babel": "3.0.3",
     "xo": "0.18.2"
   },
   "peerDependencies": {
