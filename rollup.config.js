@@ -10,9 +10,15 @@ export default ['umd', 'es'].map(format => ({
     sourcemap: true,
     globals: {
       react: 'React',
-      'redux-saga': 'ReduxSaga'
+      'redux-saga': 'ReduxSaga',
+      'babel-runtime/regenerator': 'regeneratorRuntime'
     }
   },
-  plugins: [babel({exclude: 'node_modules/**'})],
-  external: ['react', 'redux-saga']
+  plugins: [
+    babel({
+      exclude: 'node_modules/**',
+      runtimeHelpers: true
+    })
+  ],
+  external: ['react', 'redux-saga', 'babel-runtime/regenerator']
 }))

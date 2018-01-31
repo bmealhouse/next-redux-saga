@@ -1,8 +1,19 @@
 {
   "presets": [["env", {"modules": false}], "react", "stage-3"],
+  "plugins": [
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ]
+  ],
   "env": {
     "test": {
-      "presets": [["env", {"modules": "commonjs"}], "react", "stage-3"]
+      "presets": [["env", {"modules": "commonjs"}]]
     }
   }
 }
