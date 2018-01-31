@@ -87,14 +87,6 @@
     "rollup-plugin-babel": "3.0.3",
     "xo": "0.18.2"
   },
-  "peerDependencies": {
-    "next": "*",
-    "next-redux-wrapper": "*",
-    "react": "*",
-    "react-redux": "*",
-    "redux": "*",
-    "redux-saga": "*"
-  },
   "bugs": {
     "url": "https://github.com/bmealhouse/next-redux-saga/issues"
   },
