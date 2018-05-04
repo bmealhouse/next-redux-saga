@@ -1,6 +1,6 @@
 {
   "name": "next-redux-saga",
-  "version": "2.0.1",
+  "version": "3.0.0-beta.1",
   "description": "redux-saga HOC for Next.js",
   "repository": "https://github.com/bmealhouse/next-redux-saga.git",
   "author": "Brent Mealhouse <bmealhouse@gmail.com>",
@@ -72,8 +72,8 @@
     "husky": "0.14.3",
     "jest": "22.1.4",
     "lint-staged": "6.1.0",
-    "next": "4.2.3",
-    "next-redux-wrapper": "1.3.5",
+    "next": "6.0.0",
+    "next-redux-wrapper": "2.0.0-beta.4",
     "prettier": "1.10.2",
     "prop-types": "15.6.0",
     "react": "16.2.0",

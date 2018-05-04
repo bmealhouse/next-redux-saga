@@ -38,12 +38,12 @@ exports[`Wrapped component passes along React props (sync) 1`] = `
 
 exports[`Wrapped component skips getInitialProps when it does not exist (async) 1`] = `
 <div>
-  ClassComponent({"mode":"async"})
+  ClassComponent({"mode":"async","store":{"sagaTask":{"@@redux-saga/TASK":true,"id":13,"name":"rootSaga","joiners":[],"done":{}}},"isServer":false})
 </div>
 `;
 
 exports[`Wrapped component skips getInitialProps when it does not exist (sync) 1`] = `
 <div>
-  ClassComponent({"mode":"sync"})
+  ClassComponent({"mode":"sync","store":{"sagaTask":{"@@redux-saga/TASK":true,"id":4,"name":"rootSaga","joiners":[],"done":{}}},"isServer":false})
 </div>
 `;

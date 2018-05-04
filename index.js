@@ -4,17 +4,17 @@ import {END} from 'redux-saga'
 function hoc(config) {
   return BaseComponent => {
     class WrappedComponent extends Component {
-      static async getInitialProps(ctx) {
-        const {isServer, store} = ctx
+      static async getInitialProps(props) {
+        const {isServer, store} = props.ctx
 
-        let props
+        let pageProps = {}
         if (BaseComponent.getInitialProps) {
-          props = await BaseComponent.getInitialProps(ctx)
+          pageProps = await BaseComponent.getInitialProps(props)
         }
 
         // Keep saga running on the client (async mode)
         if (config.async && !isServer) {
-          return props
+          return pageProps
         }
 
         // Force saga to end in all other cases
@@ -26,7 +26,7 @@ function hoc(config) {
           store.runSagaTask()
         }
 
-        return props
+        return pageProps
       }
 
       render() {
