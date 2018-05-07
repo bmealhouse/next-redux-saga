@@ -7,7 +7,7 @@ function hoc(config) {
       static async getInitialProps(props) {
         const {isServer, store} = props.ctx
 
-        let pageProps
+        let pageProps = {}
         if (BaseComponent.getInitialProps) {
           pageProps = await BaseComponent.getInitialProps(props)
         }
