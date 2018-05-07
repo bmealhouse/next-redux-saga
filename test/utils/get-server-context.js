@@ -1,5 +1,5 @@
 function getServerContext() {
-  return {req: {}, res: {}}
+  return {ctx: {req: {}, res: {}}}
 }
 
 export default getServerContext

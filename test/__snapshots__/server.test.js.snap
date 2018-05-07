@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wrapped component awaits asynchronous getInitialProps (sync) 1`] = `
+exports[`Wrapped component awaits asynchronous getInitialProps (async) 1`] = `
 <div>
-  AsyncGetInitialProps({"mode":"sync","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
+  AsyncGetInitialProps({"mode":"async","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
 </div>
 `;
 
-exports[`Wrapped component awaits asynchronous getInitialProps (sync) 2`] = `
+exports[`Wrapped component awaits asynchronous getInitialProps (sync) 1`] = `
 <div>
-  AsyncGetInitialProps({"mode":"async","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
+  AsyncGetInitialProps({"mode":"sync","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
 </div>
 `;
 
@@ -38,12 +38,12 @@ exports[`Wrapped component passes along React props (sync) 1`] = `
 
 exports[`Wrapped component skips getInitialProps when it does not exist (async) 1`] = `
 <div>
-  ClassComponent({"mode":"async","store":{"sagaTask":{"@@redux-saga/TASK":true,"id":13,"name":"rootSaga","joiners":[],"done":{}}},"isServer":false})
+  ClassComponent({"mode":"async"})
 </div>
 `;
 
 exports[`Wrapped component skips getInitialProps when it does not exist (sync) 1`] = `
 <div>
-  ClassComponent({"mode":"sync","store":{"sagaTask":{"@@redux-saga/TASK":true,"id":4,"name":"rootSaga","joiners":[],"done":{}}},"isServer":false})
+  ClassComponent({"mode":"sync"})
 </div>
 `;
