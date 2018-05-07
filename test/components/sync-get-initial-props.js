@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
 import {
   GET_SYNC_REDUX_PROP_TYPE,
@@ -7,7 +9,9 @@ import {
 } from '../constants'
 
 class SyncGetInitialProps extends Component {
-  static async getInitialProps({store}) {
+  static async getInitialProps(props) {
+    const {store} = props.ctx
+
     store.dispatch({
       type: GET_SYNC_REDUX_PROP_TYPE,
       data: SYNC_REDUX_PROP_TEXT
@@ -17,8 +21,14 @@ class SyncGetInitialProps extends Component {
   }
 
   render() {
-    return <div>SyncGetInitialProps({JSON.stringify(this.props)})</div>
+    const {mode, staticProp, syncReduxProp} = this.props
+
+    return (
+      <div>
+        SyncGetInitialProps({JSON.stringify({mode, staticProp, syncReduxProp})})
+      </div>
+    )
   }
 }
 
-export default SyncGetInitialProps
+export default connect(state => state)(SyncGetInitialProps)
