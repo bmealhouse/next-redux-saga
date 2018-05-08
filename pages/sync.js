@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {string} from 'prop-types'
 import withRedux from 'next-redux-wrapper'
-import withReduxSaga from '../'
+import withReduxSaga from '..'
 import configureStore from '../test/store/configure-store'
 import App from './_app-component'
 
