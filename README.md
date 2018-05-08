@@ -66,11 +66,12 @@ function configureStore(initialState) {
 export default configureStore
 ```
 
-### Configure Custom <App>
+### Configure Custom App Component
 
 ```js
 import React from 'react'
 import App, {Container} from 'next/app'
+import {Provider} from 'react-redux'
 import withRedux from 'next-redux-wrapper'
 import nextReduxSaga from 'next-redux-saga'
 import configureStore from './configure-store'
