@@ -138,9 +138,9 @@ withReduxSaga({async: true})(ExamplePage)
 
 ## Contributors
 
-| [![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser) |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [Brent Mealhouse](https://github.com/bmealhouse)                                                | [Artem Abzanov](https://github.com/JerryCauser)                                                 |
+| [![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser) | [![Robbin Habermehl](https://github.com/RobbinHabermehl.png?size=100)](https://github.com/RobbinHabermehl) |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [Brent Mealhouse](https://github.com/bmealhouse)                                                | [Artem Abzanov](https://github.com/JerryCauser)                                                 | [Robbin Habermehl](https://github.com/RobbinHabermehl)                                                     |
 
 ## Contributing
 
