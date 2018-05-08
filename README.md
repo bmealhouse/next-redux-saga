@@ -6,6 +6,8 @@
 
 > redux-saga HOC for [Next.js](https://github.com/zeit/next.js/)
 
+:warning: This will work only with NextJS 6+ :warning:
+
 ## Installation
 
 ```sh
@@ -25,7 +27,7 @@ Check out the official [Next.js example](https://github.com/zeit/next.js/tree/ca
 
 ## Usage
 
-`next-redux-saga` uses the redux store created by [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper).  Please refer to their documentation for more information.
+`next-redux-saga` uses the redux store created by [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper). Please refer to their documentation for more information.
 
 ### Configure Store
 
@@ -43,13 +45,13 @@ function configureStore(initialState) {
     initialState,
     applyMiddleware(sagaMiddleware)
   )
-  
+
   /**
    * next-redux-saga depends on `runSagaTask` and `sagaTask` being attached to the store.
-   * 
+   *
    *   `runSagaTask` is used to rerun the rootSaga on the client when in sync mode (default)
    *   `sagaTask` is used to await the rootSaga task before sending results to the client
-   *   
+   *
    */
 
   store.runSagaTask = () => {
@@ -64,13 +66,46 @@ function configureStore(initialState) {
 export default configureStore
 ```
 
-### Wrap Page Component
+### Configure Custom <App>
+
+```js
+import React from 'react'
+import App, {Container} from 'next/app'
+import withRedux from 'next-redux-wrapper'
+import nextReduxSaga from 'next-redux-saga'
+import configureStore from './configure-store'
+
+class ExampleApp extends App {
+  static async getInitialProps({Component, ctx}) {
+    let pageProps = {}
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
+    return {pageProps}
+  }
+
+  render() {
+    const {Component, pageProps, store} = this.props
+    return (
+      <Container>
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
+      </Container>
+    )
+  }
+}
+
+export default withRedux(configureStore)(withReduxSaga(ExampleApp))
+```
+
+### Connect Page Components
 
 ```js
 import React, {Component} from 'react'
-import withRedux from 'next-redux-wrapper'
-import withReduxSaga from 'next-redux-saga'
-import configureStore from './configure-store'
+import {connect} from 'react-redux'
 
 class ExamplePage extends Component {
   static async getInitialProps({store}) {
@@ -83,16 +118,14 @@ class ExamplePage extends Component {
   }
 }
 
-export default withRedux(configureStore, state => state)(
-  withReduxSaga(ExamplePage)
-)
+export default connect(state => state)(ExamplePage)
 ```
 
 ### Sync vs. Async API
 
-To be consistent with how Next.js works, `next-redux-saga` defaults to **sync mode** in version 2.x.  When you trigger a route change on the client, your browser **WILL NOT** navigate to the new page until `getInitialProps()` has completed running all it's asynchronous tasks.
+To be consistent with how Next.js works, `next-redux-saga` defaults to **sync mode** in version 2.x. When you trigger a route change on the client, your browser **WILL NOT** navigate to the new page until `getInitialProps()` has completed running all it's asynchronous tasks.
 
-For backwards compatibility with 1.x, **async mode** is still supported, however it is no longer the default behavior.  When you trigger a route change on the client in async mode, your browser **WILL** navigate to the new page immediately and continue to carry out the asynchronous tasks from `getInitialProps()`.  When the asynchronous tasks have completed, React will rerender the components necessary to display the async data.
+For backwards compatibility with 1.x, **async mode** is still supported, however it is no longer the default behavior. When you trigger a route change on the client in async mode, your browser **WILL** navigate to the new page immediately and continue to carry out the asynchronous tasks from `getInitialProps()`. When the asynchronous tasks have completed, React will rerender the components necessary to display the async data.
 
 ```js
 // sync mode
@@ -104,9 +137,9 @@ withReduxSaga({async: true})(ExamplePage)
 
 ## Contributors
 
-[![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser)
----|---
-[Brent Mealhouse](https://github.com/bmealhouse) | [Artem Abzanov](https://github.com/JerryCauser)
+| [![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser) |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [Brent Mealhouse](https://github.com/bmealhouse)                                                | [Artem Abzanov](https://github.com/JerryCauser)                                                 |
 
 ## Contributing
 
