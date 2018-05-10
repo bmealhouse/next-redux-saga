@@ -11,7 +11,6 @@ import SyncGetInitialProps from './components/sync-get-initial-props'
 import configureStore from './store/configure-store'
 import createSnapshot from './utils/create-snapshot'
 import getInitialProps from './utils/get-initial-props'
-import getServerContext from './utils/get-server-context'
 
 test('Wrapped component passes along React props (sync)', () => {
   const WrappedComponent = withRedux(configureStore)(
@@ -27,7 +26,9 @@ test('Wrapped component skips getInitialProps when it does not exist (sync)', as
     withReduxSaga(ClassComponent)
   )
 
-  const props = await getInitialProps(WrappedComponent, getServerContext())
+  const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(true)
+
   createSnapshot(WrappedComponent, {mode: 'sync', ...props})
 })
 
@@ -36,7 +37,9 @@ test('Wrapped component awaits synchronous getInitialProps (sync)', async () => 
     withReduxSaga(SyncGetInitialProps)
   )
 
-  const props = await getInitialProps(WrappedComponent, getServerContext())
+  const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(true)
+
   createSnapshot(WrappedComponent, {mode: 'sync', ...props})
 })
 
@@ -45,7 +48,9 @@ test('Wrapped component awaits asynchronous getInitialProps (sync)', async () =>
     withReduxSaga(AsyncGetInitialProps)
   )
 
-  const props = await getInitialProps(WrappedComponent, getServerContext())
+  const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(true)
+
   createSnapshot(WrappedComponent, {mode: 'sync', ...props})
 })
 
@@ -63,7 +68,9 @@ test('Wrapped component skips getInitialProps when it does not exist (async)', a
     withReduxSaga({async: true})(ClassComponent)
   )
 
-  const props = await getInitialProps(WrappedComponent, getServerContext())
+  const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(true)
+
   createSnapshot(WrappedComponent, {mode: 'async', ...props})
 })
 
@@ -72,7 +79,9 @@ test('Wrapped component awaits synchronous getInitialProps (async)', async () =>
     withReduxSaga({async: true})(SyncGetInitialProps)
   )
 
-  const props = await getInitialProps(WrappedComponent, getServerContext())
+  const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(true)
+
   createSnapshot(WrappedComponent, {mode: 'async', ...props})
 })
 
@@ -81,6 +90,8 @@ test('Wrapped component awaits asynchronous getInitialProps (async)', async () =
     withReduxSaga({async: true})(AsyncGetInitialProps)
   )
 
-  const props = await getInitialProps(WrappedComponent, getServerContext())
+  const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(true)
+
   createSnapshot(WrappedComponent, {mode: 'async', ...props})
 })

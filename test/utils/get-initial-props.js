@@ -1,6 +1,6 @@
-async function getInitialProps(WrappedComponent, context) {
+async function getInitialProps(WrappedComponent) {
   // getInitialProps is called by Next.js at runtime.
-  return WrappedComponent.getInitialProps(context)
+  return WrappedComponent.getInitialProps({ctx: {}})
 }
 
 export default getInitialProps

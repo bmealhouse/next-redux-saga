@@ -26,6 +26,8 @@ test('Wrapped component skips getInitialProps when it does not exist (sync)', as
   )
 
   const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(false)
+
   createSnapshot(WrappedComponent, {mode: 'sync', ...props})
 })
 
@@ -35,6 +37,8 @@ test('Wrapped component awaits synchronous getInitialProps (sync)', async () => 
   )
 
   const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(false)
+
   createSnapshot(WrappedComponent, {mode: 'sync', ...props})
 })
 
@@ -44,6 +48,8 @@ test('Wrapped component awaits asynchronous getInitialProps (sync)', async () =>
   )
 
   const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(false)
+
   createSnapshot(WrappedComponent, {mode: 'sync', ...props})
 })
 
@@ -62,6 +68,8 @@ test('Wrapped component skips getInitialProps when it does not exist (async)', a
   )
 
   const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(false)
+
   createSnapshot(WrappedComponent, {mode: 'async', ...props})
 })
 
@@ -71,6 +79,8 @@ test('Wrapped component awaits synchronous getInitialProps (async)', async () =>
   )
 
   const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(false)
+
   createSnapshot(WrappedComponent, {mode: 'async', ...props})
 })
 
@@ -80,5 +90,7 @@ test('Wrapped component awaits asynchronous getInitialProps (async)', async () =
   )
 
   const props = await getInitialProps(WrappedComponent)
+  expect(props.isServer).toBe(false)
+
   createSnapshot(WrappedComponent, {mode: 'async', ...props})
 })
