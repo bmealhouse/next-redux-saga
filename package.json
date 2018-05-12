@@ -39,6 +39,12 @@
     "semi": false,
     "singleQuote": true
   },
+  "renovate": {
+    "automerge": true,
+    "automergeType": "branch-push",
+    "pinVersions": true,
+    "schedule": ["every friday"]
+  },
   "xo": {
     "envs": [
       "browser",
