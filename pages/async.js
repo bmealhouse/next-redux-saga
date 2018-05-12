@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import {string} from 'prop-types'
-import withRedux from 'next-redux-wrapper'
+import {connect} from 'react-redux'
 import withReduxSaga from '..'
-import configureStore from '../test/store/configure-store'
-import App from './_app-component'
+import Layout from '../components/layout'
 
 import {
   GET_SYNC_REDUX_PROP_TYPE,
@@ -20,7 +19,9 @@ class AsyncExample extends Component {
     asyncReduxSagaProp: string
   }
 
-  static async getInitialProps({store}) {
+  static async getInitialProps(props) {
+    const {store} = props.ctx
+
     store.dispatch({type: RESET_STORE_TYPE})
 
     store.dispatch({
@@ -36,7 +37,7 @@ class AsyncExample extends Component {
     const {staticProp, syncReduxProp, asyncReduxSagaProp} = this.props
 
     return (
-      <App>
+      <Layout>
         <section>
           Received <strong>static</strong> prop:
           <pre>
@@ -55,11 +56,11 @@ class AsyncExample extends Component {
             <code>{asyncReduxSagaProp || 'loading...'}</code>
           </pre>
         </section>
-      </App>
+      </Layout>
     )
   }
 }
 
-export default withRedux(configureStore, state => state)(
-  withReduxSaga({async: true})(AsyncExample)
+export default withReduxSaga({async: true})(
+  connect(state => state)(AsyncExample)
 )

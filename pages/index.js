@@ -1,8 +1,8 @@
 import React from 'react'
-import App from './_app-component'
+import Layout from '../components/layout'
 
 function Home() {
-  return <App />
+  return <Layout />
 }
 
 export default Home
