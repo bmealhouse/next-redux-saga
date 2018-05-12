@@ -11,7 +11,7 @@ export default ['umd', 'es'].map(format => ({
     globals: {
       react: 'React',
       'redux-saga': 'ReduxSaga',
-      'babel-runtime/regenerator': 'regeneratorRuntime'
+      '@abel/runtime/regenerator': 'regeneratorRuntime'
     }
   },
   plugins: [
@@ -20,5 +20,5 @@ export default ['umd', 'es'].map(format => ({
       runtimeHelpers: true
     })
   ],
-  external: ['react', 'redux-saga', 'babel-runtime/regenerator']
+  external: ['react', 'redux-saga', '@babel/runtime/regenerator']
 }))

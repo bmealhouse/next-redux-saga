@@ -43,7 +43,9 @@
     "automerge": true,
     "automergeType": "branch-push",
     "pinVersions": true,
-    "schedule": ["every friday"]
+    "schedule": [
+      "every friday"
+    ]
   },
   "xo": {
     "envs": [
@@ -63,6 +65,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.46",
+    "@babel/runtime": "7.0.0-beta.46",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.3",
     "babel-jest": "22.4.3",
@@ -87,7 +90,7 @@
     "redux-saga": "0.16.0",
     "release": "4.0.0",
     "rollup": "0.58.2",
-    "rollup-plugin-babel": "3.0.4",
+    "rollup-plugin-babel": "4.0.0-beta.4",
     "xo": "0.21.0"
   },
   "bugs": {
