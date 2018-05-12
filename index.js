@@ -4,6 +4,10 @@ import {END} from 'redux-saga'
 function hoc(config) {
   return BaseComponent => {
     class WrappedComponent extends Component {
+      static displayName = `withReduxSaga(${BaseComponent.displayName ||
+        BaseComponent.name ||
+        'BaseComponent'})`
+
       static async getInitialProps(props) {
         const {isServer, store} = props.ctx
 
