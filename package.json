@@ -78,7 +78,7 @@
     "husky": "0.14.3",
     "jest": "22.4.3",
     "lint-staged": "7.1.0",
-    "next": "6.0.1",
+    "next": "6.0.3",
     "next-redux-wrapper": "2.0.0-beta.6",
     "prettier": "1.12.1",
     "prop-types": "15.6.1",
