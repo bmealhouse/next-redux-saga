@@ -20,14 +20,11 @@ function hoc(config) {
         if (config.async && !isServer) {
           return pageProps
         }
-
-        // Force saga to end in all other cases
-        store.dispatch(END)
-        await store.sagaTask.done
-
-        // Restart saga on the client (sync mode)
-        if (!isServer) {
-          store.runSagaTask()
+        
+        // Force saga to end on server
+        if (isServer) {
+          store.dispatch(END)
+          await store.sagaTask.done
         }
 
         return pageProps
