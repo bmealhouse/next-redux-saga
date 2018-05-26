@@ -91,7 +91,7 @@
     "release": "4.0.0",
     "rollup": "0.59.3",
     "rollup-plugin-babel": "4.0.0-beta.4",
-    "xo": "0.21.0"
+    "xo": "0.21.1"
   },
   "bugs": {
     "url": "https://github.com/bmealhouse/next-redux-saga/issues"
