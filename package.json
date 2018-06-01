@@ -64,7 +64,7 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.48",
+    "@babel/core": "7.0.0-beta.49",
     "@babel/runtime": "7.0.0-beta.48",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.3",
