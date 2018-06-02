@@ -45,7 +45,11 @@
     "pinVersions": true,
     "schedule": [
       "every friday"
-    ]
+    ],
+    "packageRules": [{
+      "packageNames": ["jest", "babel-jest"],
+      "groupName": "jest packages"
+    }]
   },
   "xo": {
     "envs": [
