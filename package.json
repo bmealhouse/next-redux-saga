@@ -86,7 +86,7 @@
     "next-redux-wrapper": "2.0.0-beta.6",
     "prettier": "1.13.5",
     "prop-types": "15.6.1",
-    "react": "16.4.0",
+    "react": "16.4.1",
     "react-dom": "16.4.0",
     "react-redux": "5.0.7",
     "react-test-renderer": "16.4.0",
