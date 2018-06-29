@@ -82,7 +82,7 @@
     "husky": "0.14.3",
     "jest": "23.1.0",
     "lint-staged": "7.2.0",
-    "next": "6.0.3",
+    "next": "6.1.0",
     "next-redux-wrapper": "2.0.0-beta.6",
     "prettier": "1.13.5",
     "prop-types": "15.6.2",
