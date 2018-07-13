@@ -694,13 +694,6 @@
     core-js "^2.5.7"
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.0.0-beta.42":
-  version "7.0.0-beta.46"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.46.tgz#466a9c0498f6d12d054a185981eef742d59d4871"
-  dependencies:
-    core-js "^2.5.3"
-    regenerator-runtime "^0.11.1"
-
 "@babel/template@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.42.tgz#7186d4e70d44cdec975049ba0a73bdaf5cdee052"
@@ -5694,11 +5687,9 @@ nearley@^2.7.10:
     railroad-diagrams "^1.0.0"
     randexp "^0.4.2"
 
-next-redux-wrapper@2.0.0-beta.6:
-  version "2.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/next-redux-wrapper/-/next-redux-wrapper-2.0.0-beta.6.tgz#55128bc37fbdf1c8531a992ba14832797c34b15d"
-  dependencies:
-    "@babel/runtime" "^7.0.0-beta.42"
+next-redux-wrapper@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/next-redux-wrapper/-/next-redux-wrapper-2.0.0.tgz#74587381ff9c762cd85676d9739a51a3aeceed58"
 
 next@6.1.1:
   version "6.1.1"
