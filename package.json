@@ -94,7 +94,7 @@
     "redux-saga": "0.16.0",
     "release": "4.0.2",
     "rollup": "0.65.2",
-    "rollup-plugin-babel": "4.0.2",
+    "rollup-plugin-babel": "4.0.3",
     "xo": "0.22.0"
   },
   "bugs": {
