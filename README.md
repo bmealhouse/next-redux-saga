@@ -12,12 +12,6 @@
 yarn add next-redux-saga
 ```
 
-> Note: If you are using Next.js 6+ you have to install `next-redux-saga` with
->
-> ```js
-> yarn add next-redux-saga@beta
-> ```
-
 ## Getting Started
 
 Check out the official [Next.js example](https://github.com/zeit/next.js/tree/canary/examples/with-redux-saga) or clone this repository and run the local example.
