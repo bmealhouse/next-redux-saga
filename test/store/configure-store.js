@@ -5,10 +5,10 @@ import rootSaga from './root-saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
-function configureStore(initialState) {
+function configureStore(preloadedState) {
   const store = createStore(
     rootReducer,
-    initialState,
+    preloadedState,
     applyMiddleware(sagaMiddleware)
   )
 

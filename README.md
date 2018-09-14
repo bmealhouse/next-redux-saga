@@ -43,10 +43,16 @@ import rootSaga from './root-saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
-function configureStore(initialState) {
+function configureStore(preloadedState) {
+
+  /**
+   * Since Next.js does server-side rendering, you are REQUIRED to pass`preloadedState`
+   * when creating the store.
+   */
+
   const store = createStore(
     rootReducer,
-    initialState,
+    preloadedState,
     applyMiddleware(sagaMiddleware)
   )
 

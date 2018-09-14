@@ -14,12 +14,16 @@
   "scripts": {
     "build": "rollup --config",
     "format": "prettier --write",
-    "precommit": "xo && lint-staged",
-    "prepush": "xo && yarn test",
-    "prerelease": "yarn build",
     "release": "yarn version && git push origin master --tags && release",
     "start": "next",
     "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "xo && lint-staged",
+      "pre-push": "xo && yarn test",
+      "pre-release": "yarn build"
+    }
   },
   "jest": {
     "collectCoverage": true,
