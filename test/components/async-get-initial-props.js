@@ -6,16 +6,16 @@ import {
   GET_SYNC_REDUX_PROP_TYPE,
   GET_ASYNC_REDUX_SAGA_PROP_TYPE,
   STATIC_PROP_TEXT,
-  SYNC_REDUX_PROP_TEXT
+  SYNC_REDUX_PROP_TEXT,
 } from '../constants'
 
 class AsyncGetInitialProps extends Component {
-  static async getInitialProps(props) {
+  static getInitialProps(props) {
     const {store} = props.ctx
 
     store.dispatch({
       type: GET_SYNC_REDUX_PROP_TYPE,
-      data: SYNC_REDUX_PROP_TEXT
+      data: SYNC_REDUX_PROP_TEXT,
     })
 
     store.dispatch({type: GET_ASYNC_REDUX_SAGA_PROP_TYPE})
@@ -27,12 +27,14 @@ class AsyncGetInitialProps extends Component {
 
     return (
       <div>
-        AsyncGetInitialProps({JSON.stringify({
+        AsyncGetInitialProps(
+        {JSON.stringify({
           mode,
           staticProp,
           syncReduxProp,
-          asyncReduxSagaProp
-        })})
+          asyncReduxSagaProp,
+        })}
+        )
       </div>
     )
   }

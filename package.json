@@ -14,16 +14,12 @@
   "scripts": {
     "build": "rollup --config",
     "format": "prettier --write",
+    "precommit": "xo && lint-staged",
+    "prepush": "xo && yarn test",
+    "prerelease": "yarn build",
     "release": "yarn version && git push origin master --tags && release",
     "start": "next",
     "test": "jest"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "xo && lint-staged",
-      "pre-push": "xo && yarn test",
-      "pre-release": "yarn build"
-    }
   },
   "jest": {
     "collectCoverage": true,
@@ -39,9 +35,11 @@
     ]
   },
   "prettier": {
-    "bracketSpacing": false,
+    "useTabs": false,
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false
   },
   "renovate": {
     "automerge": true,
@@ -50,10 +48,15 @@
     "schedule": [
       "every friday"
     ],
-    "packageRules": [{
-      "packageNames": ["jest", "babel-jest"],
-      "groupName": "jest packages"
-    }]
+    "packageRules": [
+      {
+        "packageNames": [
+          "jest",
+          "babel-jest"
+        ],
+        "groupName": "jest packages"
+      }
+    ]
   },
   "xo": {
     "envs": [
@@ -62,38 +65,38 @@
     ],
     "extends": [
       "plugin:react/recommended",
-      "prettier",
       "prettier/react"
     ],
     "parser": "babel-eslint",
+    "prettier": true,
     "rules": {
       "capitalized-comments": 0,
       "import/order": 0
     }
   },
   "devDependencies": {
-    "@babel/core": "7.0.0",
+    "@babel/core": "7.0.1",
     "@babel/runtime": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
-    "babel-jest": "23.4.2",
+    "babel-jest": "23.6.0",
     "enzyme": "3.6.0",
     "enzyme-adapter-react-16": "1.5.0",
     "enzyme-to-json": "3.3.4",
     "eslint": "5.5.0",
-    "eslint-config-prettier": "3.0.1",
+    "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-react": "7.11.1",
     "husky": "0.14.3",
-    "jest": "23.5.0",
+    "jest": "23.6.0",
     "lint-staged": "7.2.2",
     "next": "6.1.2",
     "next-redux-wrapper": "2.0.0",
     "prettier": "1.14.2",
     "prop-types": "15.6.2",
-    "react": "16.5.0",
-    "react-dom": "16.5.0",
+    "react": "16.5.1",
+    "react-dom": "16.5.1",
     "react-redux": "5.0.7",
-    "react-test-renderer": "16.5.0",
+    "react-test-renderer": "16.5.1",
     "redux": "4.0.0",
     "redux-saga": "0.16.0",
     "release": "4.0.2",

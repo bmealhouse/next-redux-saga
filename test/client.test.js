@@ -13,7 +13,7 @@ import getInitialProps from './utils/get-initial-props'
 
 test('Wrapped component passes along React props (sync)', () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(FunctionalComponent)
+    withReduxSaga(FunctionalComponent),
   )
 
   const wrapper = render(<WrappedComponent mode="sync" />)
@@ -22,7 +22,7 @@ test('Wrapped component passes along React props (sync)', () => {
 
 test('Wrapped component skips getInitialProps when it does not exist (sync)', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(ClassComponent)
+    withReduxSaga(ClassComponent),
   )
 
   const props = await getInitialProps(WrappedComponent)
@@ -33,7 +33,7 @@ test('Wrapped component skips getInitialProps when it does not exist (sync)', as
 
 test('Wrapped component awaits synchronous getInitialProps (sync)', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(SyncGetInitialProps)
+    withReduxSaga(SyncGetInitialProps),
   )
 
   const props = await getInitialProps(WrappedComponent)
@@ -44,7 +44,7 @@ test('Wrapped component awaits synchronous getInitialProps (sync)', async () => 
 
 test('Wrapped component awaits asynchronous getInitialProps (sync)', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(AsyncGetInitialProps)
+    withReduxSaga(AsyncGetInitialProps),
   )
 
   const props = await getInitialProps(WrappedComponent)
@@ -55,7 +55,7 @@ test('Wrapped component awaits asynchronous getInitialProps (sync)', async () =>
 
 test('Wrapped component passes along React props (async)', () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga({async: true})(FunctionalComponent)
+    withReduxSaga({async: true})(FunctionalComponent),
   )
 
   const wrapper = render(<WrappedComponent mode="async" />)
@@ -64,7 +64,7 @@ test('Wrapped component passes along React props (async)', () => {
 
 test('Wrapped component skips getInitialProps when it does not exist (async)', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga({async: true})(ClassComponent)
+    withReduxSaga({async: true})(ClassComponent),
   )
 
   const props = await getInitialProps(WrappedComponent)
@@ -75,7 +75,7 @@ test('Wrapped component skips getInitialProps when it does not exist (async)', a
 
 test('Wrapped component awaits synchronous getInitialProps (async)', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga({async: true})(SyncGetInitialProps)
+    withReduxSaga({async: true})(SyncGetInitialProps),
   )
 
   const props = await getInitialProps(WrappedComponent)
@@ -86,7 +86,7 @@ test('Wrapped component awaits synchronous getInitialProps (async)', async () =>
 
 test('Wrapped component awaits asynchronous getInitialProps (async)', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga({async: true})(AsyncGetInitialProps)
+    withReduxSaga({async: true})(AsyncGetInitialProps),
   )
 
   const props = await getInitialProps(WrappedComponent)

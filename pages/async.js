@@ -9,24 +9,22 @@ import {
   GET_ASYNC_REDUX_SAGA_PROP_TYPE,
   RESET_STORE_TYPE,
   STATIC_PROP_TEXT,
-  SYNC_REDUX_PROP_TEXT
+  SYNC_REDUX_PROP_TEXT,
 } from '../test/constants'
 
 class AsyncExample extends Component {
   static propTypes = {
     staticProp: string,
     syncReduxProp: string,
-    asyncReduxSagaProp: string
+    asyncReduxSagaProp: string,
   }
 
-  static async getInitialProps(props) {
-    const {store} = props.ctx
-
+  static getInitialProps({ctx: {store}}) {
     store.dispatch({type: RESET_STORE_TYPE})
 
     store.dispatch({
       type: GET_SYNC_REDUX_PROP_TYPE,
-      data: SYNC_REDUX_PROP_TEXT
+      data: SYNC_REDUX_PROP_TEXT,
     })
 
     store.dispatch({type: GET_ASYNC_REDUX_SAGA_PROP_TYPE})
@@ -62,5 +60,5 @@ class AsyncExample extends Component {
 }
 
 export default withReduxSaga({async: true})(
-  connect(state => state)(AsyncExample)
+  connect(state => state)(AsyncExample),
 )

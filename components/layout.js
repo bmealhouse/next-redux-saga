@@ -10,7 +10,7 @@ Router.onRouteChangeComplete = () => {
 
 class App extends Component {
   static propTypes = {
-    children: node
+    children: node,
   }
 
   componentDidMount() {

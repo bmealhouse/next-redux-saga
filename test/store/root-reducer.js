@@ -1,7 +1,7 @@
 import {
   GET_SYNC_REDUX_PROP_TYPE,
   GET_ASYNC_REDUX_SAGA_PROP_TYPE_SUCCESS,
-  RESET_STORE_TYPE
+  RESET_STORE_TYPE,
 } from '../constants'
 
 const initialState = {}

@@ -5,7 +5,12 @@ import {connect} from 'react-redux'
 class ClassComponent extends Component {
   render() {
     const {mode} = this.props
-    return <div>ClassComponent({JSON.stringify({mode})})</div>
+    return (
+      <div>
+        ClassComponent(
+        {JSON.stringify({mode})})
+      </div>
+    )
   }
 }
 
