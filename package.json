@@ -100,7 +100,7 @@
     "redux": "4.0.0",
     "redux-saga": "0.16.0",
     "release": "4.0.2",
-    "rollup": "0.65.2",
+    "rollup": "0.66.2",
     "rollup-plugin-babel": "4.0.3",
     "xo": "0.23.0"
   },
