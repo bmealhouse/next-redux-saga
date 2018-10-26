@@ -6418,14 +6418,14 @@ react-redux@5.1.0:
     react-is "^16.6.0"
     react-lifecycles-compat "^3.0.0"
 
-react-test-renderer@16.5.2:
-  version "16.5.2"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.5.2.tgz#92e9d2c6f763b9821b2e0b22f994ee675068b5ae"
+react-test-renderer@16.6.0:
+  version "16.6.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.6.0.tgz#fe490096bed55c3f4e92c023da3b89f9d03fceb3"
   dependencies:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    react-is "^16.5.2"
-    schedule "^0.5.0"
+    react-is "^16.6.0"
+    scheduler "^0.10.0"
 
 react-test-renderer@^16.0.0-0:
   version "16.5.1"
@@ -6965,12 +6965,6 @@ sax@^1.2.4:
 schedule@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.4.0.tgz#fa20cfd0bfbf91c47d02272fd7096780d3170bbb"
-  dependencies:
-    object-assign "^4.1.1"
-
-schedule@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.5.0.tgz#c128fffa0b402488b08b55ae74bb9df55cc29cc8"
   dependencies:
     object-assign "^4.1.1"
 
