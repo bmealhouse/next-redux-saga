@@ -81,7 +81,7 @@
     "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",
     "enzyme": "3.7.0",
-    "enzyme-adapter-react-16": "1.6.0",
+    "enzyme-adapter-react-16": "1.7.0",
     "enzyme-to-json": "3.3.4",
     "eslint": "5.8.0",
     "eslint-plugin-prettier": "3.0.0",
