@@ -96,7 +96,7 @@
     "react": "16.6.1",
     "react-dom": "16.6.1",
     "react-redux": "5.1.0",
-    "react-test-renderer": "16.6.0",
+    "react-test-renderer": "16.6.1",
     "redux": "4.0.1",
     "redux-saga": "0.16.2",
     "release": "4.0.2",
