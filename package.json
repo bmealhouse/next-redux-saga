@@ -94,7 +94,7 @@
     "prettier": "1.15.2",
     "prop-types": "15.6.2",
     "react": "16.6.3",
-    "react-dom": "16.6.1",
+    "react-dom": "16.6.3",
     "react-redux": "5.1.0",
     "react-test-renderer": "16.6.1",
     "redux": "4.0.1",
