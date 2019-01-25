@@ -6864,9 +6864,9 @@ regjsparser@^0.3.0:
   dependencies:
     jsesc "~0.5.0"
 
-release@5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/release/-/release-5.0.3.tgz#09b8ae1d768ed29a645dcfb3c1e8aa551fd94bff"
+release@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/release/-/release-6.0.0.tgz#9e27bb2211923a8c9183daf18260b204558c5adc"
   dependencies:
     "@octokit/rest" "15.2.6"
     args "4.0.0"
