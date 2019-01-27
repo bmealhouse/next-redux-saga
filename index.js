@@ -23,7 +23,7 @@ function hoc(config) {
 
         // Force saga to end in all other cases
         store.dispatch(END)
-        await store.sagaTask.done
+        await store.sagaTask.toPromise()
 
         // Restart saga on the client (sync mode)
         if (!isServer) {
