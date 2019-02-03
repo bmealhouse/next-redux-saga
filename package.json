@@ -91,7 +91,7 @@
     "lint-staged": "8.1.0",
     "next": "7.0.2",
     "next-redux-wrapper": "2.1.0",
-    "prettier": "1.15.3",
+    "prettier": "1.16.4",
     "prop-types": "15.6.2",
     "react": "16.7.0",
     "react-dom": "16.7.0",
