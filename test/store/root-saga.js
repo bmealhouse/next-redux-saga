@@ -1,5 +1,4 @@
-import {delay} from 'redux-saga'
-import {call, put, takeEvery} from 'redux-saga/effects'
+import {call, delay, put, takeEvery} from 'redux-saga/effects'
 
 import {
   GET_ASYNC_REDUX_SAGA_PROP_TYPE,
@@ -10,7 +9,7 @@ import {
 const TEST = process.env.NODE_ENV === 'test'
 
 function* getAsyncReduxSagaProp() {
-  yield call(delay, TEST ? 100 : 2000)
+  yield delay(TEST ? 100 : 2000)
 
   yield put({
     type: GET_ASYNC_REDUX_SAGA_PROP_TYPE_SUCCESS,
