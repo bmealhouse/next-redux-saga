@@ -16,18 +16,10 @@ function hoc(config) {
           pageProps = await BaseComponent.getInitialProps(props)
         }
 
-        // Keep saga running on the client (async mode)
-        if (config.async && !isServer) {
-          return pageProps
-        }
-
-        // Force saga to end in all other cases
-        store.dispatch(END)
-        await store.sagaTask.done
-
-        // Restart saga on the client (sync mode)
-        if (!isServer) {
-          store.runSagaTask()
+        // Stop saga on the server
+        if (isServer) {
+          store.dispatch(END)
+          await store.sagaTask.toPromise()
         }
 
         return pageProps
@@ -43,13 +35,11 @@ function hoc(config) {
 }
 
 function withReduxSaga(arg) {
-  const defaultConfig = {async: false}
-
   if (typeof arg === 'function') {
-    return hoc(defaultConfig)(arg)
+    return hoc()(arg)
   }
 
-  return hoc({...defaultConfig, ...arg})
+  return hoc({...arg})
 }
 
 export default withReduxSaga
