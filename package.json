@@ -74,6 +74,9 @@
       "import/order": 0
     }
   },
+  "peerDependencies": {
+    "redux-saga": "0.16.2"
+  },
   "devDependencies": {
     "@babel/core": "7.2.2",
     "@babel/runtime": "7.2.0",
