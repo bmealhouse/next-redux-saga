@@ -3,14 +3,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import {
-  GET_SYNC_REDUX_PROP_TYPE,
   GET_ASYNC_REDUX_SAGA_PROP_TYPE,
+  GET_SYNC_REDUX_PROP_TYPE,
   STATIC_PROP_TEXT,
   SYNC_REDUX_PROP_TEXT,
 } from '../constants'
 
 class AsyncGetInitialProps extends Component {
-  static getInitialProps(props) {
+  static async getInitialProps(props) {
     const {store} = props.ctx
 
     store.dispatch({
@@ -23,18 +23,9 @@ class AsyncGetInitialProps extends Component {
   }
 
   render() {
-    const {mode, staticProp, syncReduxProp, asyncReduxSagaProp} = this.props
-
     return (
       <div>
-        AsyncGetInitialProps(
-        {JSON.stringify({
-          mode,
-          staticProp,
-          syncReduxProp,
-          asyncReduxSagaProp,
-        })}
-        )
+        AsyncGetInitialProps({JSON.stringify(this.props)})
       </div>
     )
   }
