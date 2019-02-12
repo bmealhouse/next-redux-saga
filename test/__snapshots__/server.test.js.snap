@@ -1,49 +1,174 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wrapped component awaits asynchronous getInitialProps (async) 1`] = `
-<div>
-  AsyncGetInitialProps({"mode":"async","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
-</div>
+exports[`Wrapped component awaits asynchronous getInitialProps 1`] = `
+<Connect(AsyncGetInitialProps)
+  isServer={true}
+  staticProp="Static message from getInitialProps()"
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "runSagaTask": [Function],
+      "sagaTask": Object {
+        "@@redux-saga/TASK": true,
+        "cancel": [Function],
+        "cont": [Function],
+        "context": Object {},
+        "end": [Function],
+        "error": [Function],
+        "id": 19,
+        "isAborted": [Function],
+        "isCancelled": [Function],
+        "isRoot": true,
+        "isRunning": [Function],
+        "joiners": null,
+        "meta": Object {
+          "location": undefined,
+          "name": "rootSaga",
+        },
+        "queue": Object {
+          "abort": [Function],
+          "addTask": [Function],
+          "cancelAll": [Function],
+          "getTasks": [Function],
+        },
+        "result": [Function],
+        "setContext": [Function],
+        "toPromise": [Function],
+      },
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+/>
 `;
 
-exports[`Wrapped component awaits asynchronous getInitialProps (sync) 1`] = `
-<div>
-  AsyncGetInitialProps({"mode":"sync","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux","asyncReduxSagaProp":"Asynchronous message from Redux-Saga"})
-</div>
+exports[`Wrapped component awaits synchronous getInitialProps 1`] = `
+<Connect(SyncGetInitialProps)
+  isServer={true}
+  staticProp="Static message from getInitialProps()"
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "runSagaTask": [Function],
+      "sagaTask": Object {
+        "@@redux-saga/TASK": true,
+        "cancel": [Function],
+        "cont": [Function],
+        "context": Object {},
+        "end": [Function],
+        "error": [Function],
+        "id": 13,
+        "isAborted": [Function],
+        "isCancelled": [Function],
+        "isRoot": true,
+        "isRunning": [Function],
+        "joiners": null,
+        "meta": Object {
+          "location": undefined,
+          "name": "rootSaga",
+        },
+        "queue": Object {
+          "abort": [Function],
+          "addTask": [Function],
+          "cancelAll": [Function],
+          "getTasks": [Function],
+        },
+        "result": [Function],
+        "setContext": [Function],
+        "toPromise": [Function],
+      },
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+/>
 `;
 
-exports[`Wrapped component awaits synchronous getInitialProps (async) 1`] = `
-<div>
-  SyncGetInitialProps({"mode":"async","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux"})
-</div>
+exports[`Wrapped component passes along React props 1`] = `
+<Connect(FunctionalComponent)
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "runSagaTask": [Function],
+      "sagaTask": Object {
+        "@@redux-saga/TASK": true,
+        "cancel": [Function],
+        "cont": [Function],
+        "context": Object {},
+        "end": [Function],
+        "error": [Function],
+        "id": 1,
+        "isAborted": [Function],
+        "isCancelled": [Function],
+        "isRoot": true,
+        "isRunning": [Function],
+        "joiners": Array [],
+        "meta": Object {
+          "location": undefined,
+          "name": "rootSaga",
+        },
+        "queue": Object {
+          "abort": [Function],
+          "addTask": [Function],
+          "cancelAll": [Function],
+          "getTasks": [Function],
+        },
+        "result": [Function],
+        "setContext": [Function],
+        "toPromise": [Function],
+      },
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+/>
 `;
 
-exports[`Wrapped component awaits synchronous getInitialProps (sync) 1`] = `
-<div>
-  SyncGetInitialProps({"mode":"sync","staticProp":"Static message from getInitialProps()","syncReduxProp":"Synchronous message from Redux"})
-</div>
-`;
-
-exports[`Wrapped component passes along React props (async) 1`] = `
-<div>
-  FunctionalComponent({"mode":"async"})
-</div>
-`;
-
-exports[`Wrapped component passes along React props (sync) 1`] = `
-<div>
-  FunctionalComponent({"mode":"sync"})
-</div>
-`;
-
-exports[`Wrapped component skips getInitialProps when it does not exist (async) 1`] = `
-<div>
-  ClassComponent({"mode":"async"})
-</div>
-`;
-
-exports[`Wrapped component skips getInitialProps when it does not exist (sync) 1`] = `
-<div>
-  ClassComponent({"mode":"sync"})
-</div>
+exports[`Wrapped component skips getInitialProps when it does not exist 1`] = `
+<Connect(ClassComponent)
+  isServer={true}
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "runSagaTask": [Function],
+      "sagaTask": Object {
+        "@@redux-saga/TASK": true,
+        "cancel": [Function],
+        "cont": [Function],
+        "context": Object {},
+        "end": [Function],
+        "error": [Function],
+        "id": 7,
+        "isAborted": [Function],
+        "isCancelled": [Function],
+        "isRoot": true,
+        "isRunning": [Function],
+        "joiners": null,
+        "meta": Object {
+          "location": undefined,
+          "name": "rootSaga",
+        },
+        "queue": Object {
+          "abort": [Function],
+          "addTask": [Function],
+          "cancelAll": [Function],
+          "getTasks": [Function],
+        },
+        "result": [Function],
+        "setContext": [Function],
+        "toPromise": [Function],
+      },
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+/>
 `;

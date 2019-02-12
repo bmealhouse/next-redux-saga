@@ -1,7 +1,7 @@
 /** @jest-environment node */
 import React from 'react'
 import withRedux from 'next-redux-wrapper'
-import {render} from 'enzyme'
+import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
 import withReduxSaga from '..'
 import AsyncGetInitialProps from './components/async-get-initial-props'
@@ -11,87 +11,50 @@ import SyncGetInitialProps from './components/sync-get-initial-props'
 import configureStore from './store/configure-store'
 import createSnapshot from './utils/create-snapshot'
 import getInitialProps from './utils/get-initial-props'
+import {STATIC_PROP_TEXT, SYNC_REDUX_PROP_TEXT} from './constants'
 
-test('Wrapped component passes along React props (sync)', () => {
-  const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(FunctionalComponent),
-  )
-
-  const wrapper = render(<WrappedComponent mode="sync" />)
-  expect(toJson(wrapper)).toMatchSnapshot()
-})
-
-test('Wrapped component skips getInitialProps when it does not exist (sync)', async () => {
-  const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(ClassComponent),
-  )
-
-  const props = await getInitialProps(WrappedComponent)
-  expect(props.isServer).toBe(true)
-
-  createSnapshot(WrappedComponent, {mode: 'sync', ...props})
-})
-
-test('Wrapped component awaits synchronous getInitialProps (sync)', async () => {
-  const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(SyncGetInitialProps),
-  )
-
-  const props = await getInitialProps(WrappedComponent)
-  expect(props.isServer).toBe(true)
-
-  createSnapshot(WrappedComponent, {mode: 'sync', ...props})
-})
-
-test('Wrapped component awaits asynchronous getInitialProps (sync)', async () => {
-  const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga(AsyncGetInitialProps),
-  )
-
-  const props = await getInitialProps(WrappedComponent)
-  expect(props.isServer).toBe(true)
-
-  createSnapshot(WrappedComponent, {mode: 'sync', ...props})
-})
-
-test('Wrapped component passes along React props (async)', () => {
+test('Wrapped component passes along React props', () => {
   const WrappedComponent = withRedux(configureStore)(
     withReduxSaga({async: true})(FunctionalComponent),
   )
 
-  const wrapper = render(<WrappedComponent mode="async" />)
+  const wrapper = shallow(<WrappedComponent/>).dive()
   expect(toJson(wrapper)).toMatchSnapshot()
 })
 
-test('Wrapped component skips getInitialProps when it does not exist (async)', async () => {
+test('Wrapped component skips getInitialProps when it does not exist', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga({async: true})(ClassComponent),
+    withReduxSaga()(ClassComponent),
   )
 
   const props = await getInitialProps(WrappedComponent)
-  expect(props.isServer).toBe(true)
+  expect(props.isServer).toBeTruthy()
 
-  createSnapshot(WrappedComponent, {mode: 'async', ...props})
+  createSnapshot(WrappedComponent, props)
 })
 
-test('Wrapped component awaits synchronous getInitialProps (async)', async () => {
+test('Wrapped component awaits synchronous getInitialProps', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga({async: true})(SyncGetInitialProps),
+    withReduxSaga()(SyncGetInitialProps),
   )
 
   const props = await getInitialProps(WrappedComponent)
-  expect(props.isServer).toBe(true)
+  expect(props.isServer).toBeTruthy()
+  expect(props.initialState).toEqual({syncReduxProp: SYNC_REDUX_PROP_TEXT})
+  expect(props.initialProps).toEqual({staticProp: STATIC_PROP_TEXT})
 
-  createSnapshot(WrappedComponent, {mode: 'async', ...props})
+  createSnapshot(WrappedComponent, props)
 })
 
-test('Wrapped component awaits asynchronous getInitialProps (async)', async () => {
+test('Wrapped component awaits asynchronous getInitialProps', async () => {
   const WrappedComponent = withRedux(configureStore)(
-    withReduxSaga({async: true})(AsyncGetInitialProps),
+    withReduxSaga()(AsyncGetInitialProps),
   )
 
   const props = await getInitialProps(WrappedComponent)
-  expect(props.isServer).toBe(true)
+  expect(props.isServer).toBeTruthy()
+  expect(props.initialState).toEqual({syncReduxProp: SYNC_REDUX_PROP_TEXT})
+  expect(props.initialProps).toEqual({staticProp: STATIC_PROP_TEXT})
 
-  createSnapshot(WrappedComponent, {mode: 'async', ...props})
+  createSnapshot(WrappedComponent, props)
 })

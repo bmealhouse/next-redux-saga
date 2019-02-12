@@ -2,11 +2,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-function FunctionalComponent({mode}) {
+function FunctionalComponent(props) {
   return (
     <div>
-      FunctionalComponent(
-      {JSON.stringify({mode})})
+      FunctionalComponent({JSON.stringify(props)})
     </div>
   )
 }
