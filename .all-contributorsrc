@@ -1,0 +1,26 @@
+{
+  "projectName": "next-redux-saga",
+  "projectOwner": "bmealhouse",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "bbortt",
+      "name": "Timon Borter",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12272901?v=4",
+      "profile": "https://bbortt.github.io",
+      "contributions": [
+        "code",
+        "question",
+        "maintenance",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
