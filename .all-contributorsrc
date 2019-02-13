@@ -10,15 +10,51 @@
   "commit": false,
   "contributors": [
     {
+      "login": "bmealhouse",
+      "name": "Brent Mealhouse",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3741255?v=4",
+      "profile": "https://twitter.com/bmealhouse",
+      "contributions": [
+        "code",
+        "test",
+        "doc",
+        "maintenance",
+        "question"
+      ]
+    },
+    {
       "login": "bbortt",
       "name": "Timon Borter",
       "avatar_url": "https://avatars0.githubusercontent.com/u/12272901?v=4",
       "profile": "https://bbortt.github.io",
       "contributions": [
         "code",
-        "question",
+        "test",
+        "doc",
         "maintenance",
-        "test"
+        "question"
+      ]
+    },
+    {
+      "login": "JerryCauser",
+      "name": "Artem Abzanov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5141037?v=4",
+      "profile": "https://abzanov.com",
+      "contributions": [
+        "code",
+        "test",
+        "doc"
+      ]
+    },
+    {
+      "login": "RobbinHabermehl",
+      "name": "Robbin Habermehl",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1640272?v=4",
+      "profile": "https://github.com/RobbinHabermehl",
+      "contributions": [
+        "code",
+        "test",
+        "doc"
       ]
     }
   ],

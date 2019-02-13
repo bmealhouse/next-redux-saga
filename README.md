@@ -1,9 +1,9 @@
 # next-redux-saga
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Build Status](https://travis-ci.org/bmealhouse/next-redux-saga.svg?branch=master)](https://travis-ci.org/bmealhouse/next-redux-saga)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
 > redux-saga HOC for [Next.js](https://github.com/zeit/next.js/)
 
@@ -128,12 +128,8 @@ export default connect(state => state)(ExamplePage)
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/12272901?v=4" width="100px;" alt="Timon Borter"/><br /><sub><b>Timon Borter</b></sub>](https://bbortt.github.io)<br />[💻](https://github.com/bmealhouse/next-redux-saga/commits?author=bbortt "Code") [💬](#question-bbortt "Answering Questions") [🚧](#maintenance-bbortt "Maintenance") [⚠️](https://github.com/bmealhouse/next-redux-saga/commits?author=bbortt "Tests") |
-| :---: |
+<table><tr><td align="center"><a href="https://twitter.com/bmealhouse"><img src="https://avatars3.githubusercontent.com/u/3741255?v=4" width="100px;" alt="Brent Mealhouse"/><br /><sub><b>Brent Mealhouse</b></sub></a><br /><a href="https://github.com/bmealhouse/next-redux-saga/commits?author=bmealhouse" title="Code">💻</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=bmealhouse" title="Tests">⚠️</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=bmealhouse" title="Documentation">📖</a> <a href="#maintenance-bmealhouse" title="Maintenance">🚧</a> <a href="#question-bmealhouse" title="Answering Questions">💬</a></td><td align="center"><a href="https://bbortt.github.io"><img src="https://avatars0.githubusercontent.com/u/12272901?v=4" width="100px;" alt="Timon Borter"/><br /><sub><b>Timon Borter</b></sub></a><br /><a href="https://github.com/bmealhouse/next-redux-saga/commits?author=bbortt" title="Code">💻</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=bbortt" title="Tests">⚠️</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=bbortt" title="Documentation">📖</a> <a href="#maintenance-bbortt" title="Maintenance">🚧</a> <a href="#question-bbortt" title="Answering Questions">💬</a></td><td align="center"><a href="https://abzanov.com"><img src="https://avatars3.githubusercontent.com/u/5141037?v=4" width="100px;" alt="Artem Abzanov"/><br /><sub><b>Artem Abzanov</b></sub></a><br /><a href="https://github.com/bmealhouse/next-redux-saga/commits?author=JerryCauser" title="Code">💻</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=JerryCauser" title="Tests">⚠️</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=JerryCauser" title="Documentation">📖</a></td><td align="center"><a href="https://github.com/RobbinHabermehl"><img src="https://avatars1.githubusercontent.com/u/1640272?v=4" width="100px;" alt="Robbin Habermehl"/><br /><sub><b>Robbin Habermehl</b></sub></a><br /><a href="https://github.com/bmealhouse/next-redux-saga/commits?author=RobbinHabermehl" title="Code">💻</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=RobbinHabermehl" title="Tests">⚠️</a> <a href="https://github.com/bmealhouse/next-redux-saga/commits?author=RobbinHabermehl" title="Documentation">📖</a></td></tr></table>
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-| [![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser) | [![Robbin Habermehl](https://github.com/RobbinHabermehl.png?size=100)](https://github.com/RobbinHabermehl) |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| [Brent Mealhouse](https://github.com/bmealhouse)                                                | [Artem Abzanov](https://github.com/JerryCauser)                                                 | [Robbin Habermehl](https://github.com/RobbinHabermehl)                                                     |
 
 ## Contributing
 
