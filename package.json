@@ -14,7 +14,7 @@
   "scripts": {
     "build": "rollup --config",
     "format": "prettier --write",
-    "precommit": "xo && lint-staged",
+    "prerelease": "yarn build",
     "release": "yarn version && git push origin master --tags && release",
     "start": "next",
     "test": "jest"
