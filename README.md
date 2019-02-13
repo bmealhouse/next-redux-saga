@@ -7,6 +7,8 @@
 
 > redux-saga HOC for [Next.js](https://github.com/zeit/next.js/)
 
+> **Attention:** Synchronous HOC is no longer supported since version 4.0.0!
+
 ## Installation
 
 ```sh
@@ -52,19 +54,14 @@ function configureStore(preloadedState) {
   )
 
   /**
-   * next-redux-saga depends on `runSagaTask` and `sagaTask` being attached to the store.
+   * next-redux-saga depends on `sagaTask` being attached to the store.
    *
-   *   `runSagaTask` is used to rerun the rootSaga on the client when in sync mode (default)
    *   `sagaTask` is used to await the rootSaga task before sending results to the client
    *
    */
 
-  store.runSagaTask = () => {
-    store.sagaTask = sagaMiddleware.run(rootSaga)
-  }
+  store.sagaTask = sagaMiddleware.run(rootSaga)
 
-  // run the rootSaga initially
-  store.runSagaTask()
   return store
 }
 
@@ -148,4 +145,4 @@ export default connect(state => state)(ExamplePage)
 
 ## LICENSE
 
-MIT
+This project is licensed under the terms of MIT license. See the [license file](https://github.com/bmealhouse/next-redux-saga/blob/master/LICENSE) for more information.
