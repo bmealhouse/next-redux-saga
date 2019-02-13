@@ -23,11 +23,7 @@ class AsyncGetInitialProps extends Component {
   }
 
   render() {
-    return (
-      <div>
-        AsyncGetInitialProps({JSON.stringify(this.props)})
-      </div>
-    )
+    return <div>AsyncGetInitialProps({JSON.stringify(this.props)})</div>
   }
 }
 

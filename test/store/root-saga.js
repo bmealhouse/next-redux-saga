@@ -1,4 +1,4 @@
-import {call, delay, put, takeEvery} from 'redux-saga/effects'
+import {delay, put, takeEvery} from 'redux-saga/effects'
 
 import {
   GET_ASYNC_REDUX_SAGA_PROP_TYPE,
