@@ -1,4 +1,5 @@
 # next-redux-saga
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Build Status](https://travis-ci.org/bmealhouse/next-redux-saga.svg?branch=master)](https://travis-ci.org/bmealhouse/next-redux-saga)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
@@ -128,6 +129,11 @@ export default connect(state => state)(ExamplePage)
 
 ## Contributors
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars0.githubusercontent.com/u/12272901?v=4" width="100px;" alt="Timon Borter"/><br /><sub><b>Timon Borter</b></sub>](https://bbortt.github.io)<br />[💻](https://github.com/bmealhouse/next-redux-saga/commits?author=bbortt "Code") [💬](#question-bbortt "Answering Questions") [🚧](#maintenance-bbortt "Maintenance") [⚠️](https://github.com/bmealhouse/next-redux-saga/commits?author=bbortt "Tests") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 | [![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser) | [![Robbin Habermehl](https://github.com/RobbinHabermehl.png?size=100)](https://github.com/RobbinHabermehl) |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | [Brent Mealhouse](https://github.com/bmealhouse)                                                | [Artem Abzanov](https://github.com/JerryCauser)                                                 | [Robbin Habermehl](https://github.com/RobbinHabermehl)                                                     |
