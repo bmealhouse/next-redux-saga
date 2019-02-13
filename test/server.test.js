@@ -1,8 +1,5 @@
 /** @jest-environment node */
-import React from 'react'
 import withRedux from 'next-redux-wrapper'
-import {shallow} from 'enzyme'
-import toJson from 'enzyme-to-json'
 import withReduxSaga from '..'
 import AsyncGetInitialProps from './components/async-get-initial-props'
 import ClassComponent from './components/class-component'
@@ -18,8 +15,7 @@ test('Wrapped component passes along React props', () => {
     withReduxSaga(FunctionalComponent),
   )
 
-  const wrapper = shallow(<WrappedComponent />).dive()
-  expect(toJson(wrapper)).toMatchSnapshot()
+  createSnapshot(WrappedComponent)
 })
 
 test('Wrapped component skips getInitialProps when it does not exist', async () => {

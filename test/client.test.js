@@ -1,7 +1,4 @@
-import React from 'react'
 import withRedux from 'next-redux-wrapper'
-import {shallow} from 'enzyme'
-import toJson from 'enzyme-to-json'
 import withReduxSaga from '..'
 import ClassComponent from './components/class-component'
 import FunctionalComponent from './components/functional-component'
@@ -17,8 +14,7 @@ test('Wrapped component passes along React props', () => {
     withReduxSaga(FunctionalComponent),
   )
 
-  const wrapper = shallow(<WrappedComponent />).dive()
-  expect(toJson(wrapper)).toMatchSnapshot()
+  createSnapshot(WrappedComponent)
 })
 
 test('Wrapped component skips getInitialProps when it does not exist', async () => {
