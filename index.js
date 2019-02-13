@@ -1,14 +1,9 @@
+/* eslint-disable react/prop-types */
 import React, {Component} from 'react'
-import {object} from 'prop-types'
 import {END} from 'redux-saga'
 
 function withReduxSaga(BaseComponent) {
   class WrappedComponent extends Component {
-    static propTypes = {
-      ctx: object.isRequired,
-      store: object.isRequired,
-    }
-
     static displayName = `withReduxSaga(${BaseComponent.displayName ||
       BaseComponent.name ||
       'BaseComponent'})`
