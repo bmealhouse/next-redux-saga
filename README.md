@@ -126,20 +126,6 @@ class ExamplePage extends Component {
 export default connect(state => state)(ExamplePage)
 ```
 
-### Sync vs. Async API
-
-To be consistent with how Next.js works, `next-redux-saga` defaults to **sync mode** in version 2.x. When you trigger a route change on the client, your browser **WILL NOT** navigate to the new page until `getInitialProps()` has completed running all it's asynchronous tasks.
-
-For backwards compatibility with 1.x, **async mode** is still supported, however it is no longer the default behavior. When you trigger a route change on the client in async mode, your browser **WILL** navigate to the new page immediately and continue to carry out the asynchronous tasks from `getInitialProps()`. When the asynchronous tasks have completed, React will rerender the components necessary to display the async data.
-
-```js
-// sync mode
-withReduxSaga(ExamplePage)
-
-// async mode
-withReduxSaga({async: true})(ExamplePage)
-```
-
 ## Contributors
 
 | [![Brent Mealhouse](https://github.com/bmealhouse.png?size=100)](https://github.com/bmealhouse) | [![Artem Abzanov](https://github.com/JerryCauser.png?size=100)](https://github.com/JerryCauser) | [![Robbin Habermehl](https://github.com/RobbinHabermehl.png?size=100)](https://github.com/RobbinHabermehl) |
