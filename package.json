@@ -4,6 +4,11 @@
   "description": "redux-saga HOC for Next.js",
   "repository": "https://github.com/bmealhouse/next-redux-saga.git",
   "author": "Brent Mealhouse <bmealhouse@gmail.com>",
+  "congtributors": [
+    "Timon Borter",
+    "Artem Abzanov",
+    "Robbin Habermehl"
+  ],
   "license": "MIT",
   "main": "dist/next-redux-saga.umd.js",
   "jsnext:main": "dist/next-redux-saga.es.js",
