@@ -38,9 +38,13 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-const sagaMiddleware = createSagaMiddleware()
-
 function configureStore(preloadedState) {
+
+  /**
+  * Recreate the stdChannel (saga middleware) with every context
+  */
+
+  const sagaMiddleware = createSagaMiddleware()
 
   /**
    * Since Next.js does server-side rendering, you are REQUIRED to pass`preloadedState`

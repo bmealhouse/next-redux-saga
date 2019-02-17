@@ -3,9 +3,8 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-const sagaMiddleware = createSagaMiddleware()
-
 function configureStore(preloadedState) {
+  const sagaMiddleware = createSagaMiddleware()
   const store = createStore(
     rootReducer,
     preloadedState,
