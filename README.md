@@ -70,7 +70,7 @@ function configureStore(preloadedState) {
 export default configureStore
 ```
 
-### Configure Custom App Component
+### Configure Custom `_app.js` Component
 
 ```js
 import React from 'react'
