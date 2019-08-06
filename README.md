@@ -1,5 +1,7 @@
 # next-redux-saga
 
+[![npm version](https://img.shields.io/npm/v/next-redux-saga.svg)](https://npmjs.org/package/next-redux-saga)
+[![npm downloads](https://img.shields.io/npm/dm/next-redux-saga.svg)](https://npmjs.org/package/next-redux-saga)
 [![Build Status](https://travis-ci.com/bmealhouse/next-redux-saga.svg?branch=master)](https://travis-ci.com/bmealhouse/next-redux-saga)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
