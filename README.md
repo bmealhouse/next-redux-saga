@@ -37,6 +37,7 @@ Check out the official [Next.js example](https://github.com/zeit/next.js/tree/ca
 ```js
 import {createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import {sagaStarted} from './actions'
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
@@ -62,9 +63,12 @@ function configureStore(preloadedState) {
   /**
    * next-redux-saga depends on `sagaTask` being attached to the store.
    * It is used to await the rootSaga task before sending results to the client.
+   * However it should run only once - which must be regarded when using `next-redux-wrapper:^2.1.0`
    */
-
-  store.sagaTask = sagaMiddleware.run(rootSaga)
+  if (!store.getState().saga.ran) {
+    store.dispatch(sagaStarted())
+    store.sagaTask = sagaMiddleware.run(rootSaga)
+  }
 
   return store
 }
