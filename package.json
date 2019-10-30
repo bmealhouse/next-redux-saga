@@ -1,10 +1,10 @@
 {
   "name": "next-redux-saga",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "redux-saga HOC for Next.js",
   "repository": "https://github.com/bmealhouse/next-redux-saga.git",
   "author": "Brent Mealhouse <bmealhouse@gmail.com>",
-  "congtributors": [
+  "contributors": [
     "Timon Borter",
     "Artem Abzanov",
     "Robbin Habermehl"
@@ -23,12 +23,6 @@
     "release": "yarn version && git push origin master --tags && release",
     "start": "next",
     "test": "jest"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "xo && lint-staged",
-      "pre-push": "xo && yarn test"
-    }
   },
   "jest": {
     "collectCoverage": true,
@@ -116,7 +110,7 @@
     "react-test-renderer": "16.8.1",
     "redux": "4.0.1",
     "redux-saga": "1.0.1",
-    "release": "6.0.0",
+    "release": "6.1.0",
     "rollup": "1.1.2",
     "rollup-plugin-babel": "4.3.2",
     "xo": "0.24.0"
