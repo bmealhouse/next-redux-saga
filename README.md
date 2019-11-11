@@ -37,11 +37,10 @@ Check out the official [Next.js example](https://github.com/zeit/next.js/tree/ca
 ```js
 import {createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import {sagaStarted} from './actions'
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-function configureStore(preloadedState) {
+function configureStore(preloadedState, {isServer, req = null}) {
 
   /**
    * Recreate the stdChannel (saga middleware) with every context.
@@ -61,12 +60,14 @@ function configureStore(preloadedState) {
   )
 
   /**
-   * next-redux-saga depends on `sagaTask` being attached to the store.
+   * next-redux-saga depends on `sagaTask` being attached to the store during `getInitialProps`.
    * It is used to await the rootSaga task before sending results to the client.
-   * However it should run only once - which must be regarded when using `next-redux-wrapper:^2.1.0`
+   * However, next-redux-wrapper creates two server-side stores per request:
+   * One before `getInitialProps` and one before SSR (see issue #62 for details).
+   * On the server side, we run rootSaga during `getInitialProps` only:
    */
-  if (!store.getState().saga.ran) {
-    store.dispatch(sagaStarted())
+
+  if (req || !isServer) {
     store.sagaTask = sagaMiddleware.run(rootSaga)
   }
 
