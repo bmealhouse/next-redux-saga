@@ -1,4 +1,5 @@
 /** @jest-environment node */
+import {Request} from 'jest-express/lib/request'
 import withRedux from 'next-redux-wrapper'
 import withReduxSaga from '..'
 import AsyncGetInitialProps from './components/async-get-initial-props'
@@ -14,8 +15,19 @@ import {
   SYNC_REDUX_PROP_TEXT,
 } from './constants'
 
+/**
+ * Like `configureStore` but emulates being called on the server side by setting `req` and
+ * `isServer`.
+ */
+const serverConfigureStore = (initialState, options) =>
+  configureStore(initialState, {
+    ...options,
+    req: new Request('/'),
+    isServer: true,
+  })
+
 test('Wrapped component passes along React props', () => {
-  const WrappedComponent = withRedux(configureStore)(
+  const WrappedComponent = withRedux(serverConfigureStore)(
     withReduxSaga(FunctionalComponent),
   )
 
@@ -23,7 +35,7 @@ test('Wrapped component passes along React props', () => {
 })
 
 test('Wrapped component skips getInitialProps when it does not exist', async () => {
-  const WrappedComponent = withRedux(configureStore)(
+  const WrappedComponent = withRedux(serverConfigureStore)(
     withReduxSaga(ClassComponent),
   )
 
@@ -34,7 +46,7 @@ test('Wrapped component skips getInitialProps when it does not exist', async () 
 })
 
 test('Wrapped component awaits synchronous getInitialProps', async () => {
-  const WrappedComponent = withRedux(configureStore)(
+  const WrappedComponent = withRedux(serverConfigureStore)(
     withReduxSaga(SyncGetInitialProps),
   )
 
@@ -47,7 +59,7 @@ test('Wrapped component awaits synchronous getInitialProps', async () => {
 })
 
 test('Wrapped component awaits asynchronous getInitialProps', async () => {
-  const WrappedComponent = withRedux(configureStore)(
+  const WrappedComponent = withRedux(serverConfigureStore)(
     withReduxSaga(AsyncGetInitialProps),
   )
 

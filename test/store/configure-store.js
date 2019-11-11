@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-function configureStore(preloadedState) {
+function configureStore(preloadedState, {isServer, req = null}) {
   const sagaMiddleware = createSagaMiddleware()
   const store = createStore(
     rootReducer,
@@ -11,7 +11,9 @@ function configureStore(preloadedState) {
     applyMiddleware(sagaMiddleware),
   )
 
-  store.sagaTask = sagaMiddleware.run(rootSaga)
+  if (req || !isServer) {
+    store.sagaTask = sagaMiddleware.run(rootSaga)
+  }
 
   return store
 }
