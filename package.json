@@ -1,6 +1,6 @@
 {
   "name": "next-redux-saga",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "description": "redux-saga HOC for Next.js",
   "repository": "https://github.com/bmealhouse/next-redux-saga.git",
   "author": "Brent Mealhouse <bmealhouse@gmail.com>",
