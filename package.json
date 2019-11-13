@@ -20,7 +20,7 @@
     "build": "rollup --config",
     "format": "prettier --write",
     "prerelease": "yarn build",
-    "release": "yarn version && git push origin master --tags && release",
+    "release": "release-it",
     "start": "next",
     "test": "jest"
   },
@@ -116,7 +116,7 @@
     "react-test-renderer": "16.8.1",
     "redux": "4.0.1",
     "redux-saga": "1.0.1",
-    "release": "6.1.0",
+    "release-it": "12.4.3",
     "rollup": "1.1.2",
     "rollup-plugin-babel": "4.3.2",
     "xo": "0.24.0"
