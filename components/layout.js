@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
+
 import {node} from 'prop-types'
+
 import Router from 'next/router'
 
 Router.onRouteChangeComplete = () => {
@@ -19,22 +21,20 @@ class App extends Component {
     Router.prefetch('/async')
   }
 
-  handleClick = e => {
-    e.preventDefault()
-    e.target.classList.add('spinner')
-    Router.push(e.target.href)
+  handleClick = target => {
+    Router.push(target)
   }
 
   render() {
     return (
       <main>
-        <a href="/" onClick={this.handleClick}>
+        <a onClick={() => this.handleClick('/')}>
           Home
         </a>
-        <a href="/sync" onClick={this.handleClick}>
+        <a onClick={() => this.handleClick('/sync')}>
           Sync
         </a>
-        <a href="/async" onClick={this.handleClick}>
+        <a onClick={() => this.handleClick('/async')}>
           Async
         </a>
         {this.props.children}

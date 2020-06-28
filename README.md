@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.com/bmealhouse/next-redux-saga.svg?branch=master)](https://travis-ci.com/bmealhouse/next-redux-saga)
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg)](#contributors)
 
-> redux-saga HOC for [Next.js](https://github.com/zeit/next.js/)
+> `redux-saga` HOC for [Next.js](https://github.com/zeit/next.js/). controlled `redux-saga` execution for server side rendering.
 
 > **Attention:** Synchronous HOC is no longer supported since version 4.0.0!
 
@@ -32,60 +32,42 @@ Check out the official [Next.js example](https://github.com/zeit/next.js/tree/ca
 
 `next-redux-saga` uses the redux store created by [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper). Please refer to their documentation for more information.
 
-### Configure Store
+### Configure the Store wrapper
 
 ```js
-import {createStore, applyMiddleware} from 'redux'
+import {applyMiddleware, createStore} from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import {createWrapper} from 'next-redux-wrapper'
+
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-function configureStore(preloadedState, {isServer, req = null}) {
-
-  /**
-   * Recreate the stdChannel (saga middleware) with every context.
-   */
-
+const makeStore = context => {
   const sagaMiddleware = createSagaMiddleware()
-
-  /**
-   * Since Next.js does server-side rendering, you are REQUIRED to pass
-   * `preloadedState` when creating the store.
-   */
-
   const store = createStore(
     rootReducer,
-    preloadedState,
-    applyMiddleware(sagaMiddleware)
+    applyMiddleware(sagaMiddleware),
   )
 
-  /**
-   * next-redux-saga depends on `sagaTask` being attached to the store during `getInitialProps`.
-   * It is used to await the rootSaga task before sending results to the client.
-   * However, next-redux-wrapper creates two server-side stores per request:
-   * One before `getInitialProps` and one before SSR (see issue #62 for details).
-   * On the server side, we run rootSaga during `getInitialProps` only:
-   */
-
-  if (req || !isServer) {
-    store.sagaTask = sagaMiddleware.run(rootSaga)
-  }
+  store.sagaTask = sagaMiddleware.run(rootSaga)
 
   return store
 }
 
-export default configureStore
+const wrapper = createWrapper(makeStore)
+
+export default wrapper
+
 ```
 
 ### Configure Custom `_app.js` Component
 
 ```js
 import React from 'react'
-import {Provider} from 'react-redux'
-import App, {Container} from 'next/app'
-import withRedux from 'next-redux-wrapper'
+import App from 'next/app'
 import withReduxSaga from 'next-redux-saga'
-import configureStore from './configure-store'
+
+import wrapper from './store-wrapper'
 
 class ExampleApp extends App {
   static async getInitialProps({Component, ctx}) {
@@ -99,18 +81,14 @@ class ExampleApp extends App {
   }
 
   render() {
-    const {Component, pageProps, store} = this.props
+    const {Component, pageProps} = this.props
     return (
-      <Container>
-        <Provider store={store}>
-          <Component {...pageProps} />
-        </Provider>
-      </Container>
+      <Component {...pageProps} />
     )
   }
 }
 
-export default withRedux(configureStore)(withReduxSaga(ExampleApp))
+export default wrapper.withRedux(withReduxSaga(ExampleApp))
 ```
 
 ### Connect Page Components

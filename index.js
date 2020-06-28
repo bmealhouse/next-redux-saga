@@ -5,11 +5,11 @@ import {END} from 'redux-saga'
 function withReduxSaga(BaseComponent) {
   class WrappedComponent extends Component {
     static displayName = `withReduxSaga(${BaseComponent.displayName ||
-      BaseComponent.name ||
-      'BaseComponent'})`
+    BaseComponent.name ||
+    'BaseComponent'})`
 
     static async getInitialProps(props) {
-      const {isServer, store} = props.ctx
+      const {store} = props.ctx
 
       let pageProps = {}
       if (BaseComponent.getInitialProps) {
@@ -17,7 +17,7 @@ function withReduxSaga(BaseComponent) {
       }
 
       // Stop saga on the server
-      if (isServer) {
+      if (typeof window === 'undefined') {
         store.dispatch(END)
         await store.sagaTask.toPromise()
       }
