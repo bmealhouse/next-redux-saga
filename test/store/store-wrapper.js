@@ -1,21 +1,22 @@
-import {createStore, applyMiddleware} from 'redux'
+import {applyMiddleware, createStore} from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import {createWrapper} from 'next-redux-wrapper'
+
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-function configureStore(preloadedState, {isServer, req = null}) {
+const makeStore = context => {
   const sagaMiddleware = createSagaMiddleware()
   const store = createStore(
     rootReducer,
-    preloadedState,
     applyMiddleware(sagaMiddleware),
   )
 
-  if (req || !isServer) {
-    store.sagaTask = sagaMiddleware.run(rootSaga)
-  }
+  store.sagaTask = sagaMiddleware.run(rootSaga)
 
   return store
 }
 
-export default configureStore
+const wrapper = createWrapper(makeStore)
+
+export default wrapper
