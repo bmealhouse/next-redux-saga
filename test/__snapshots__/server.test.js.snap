@@ -1,23 +1,357 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Wrapped component awaits asynchronous getInitialProps 1`] = `
-<Connect(AsyncGetInitialProps)
-  isServer={true}
-  staticProp="Static message from getInitialProps()"
-/>
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "sagaTask": Object {
+          "@@redux-saga/TASK": true,
+          "cancel": [Function],
+          "cont": [Function],
+          "context": Object {},
+          "end": [Function],
+          "error": [Function],
+          "id": 23,
+          "isAborted": [Function],
+          "isCancelled": [Function],
+          "isRoot": true,
+          "isRunning": [Function],
+          "joiners": Array [],
+          "meta": Object {
+            "location": undefined,
+            "name": "rootSaga",
+          },
+          "queue": Object {
+            "abort": [Function],
+            "addTask": [Function],
+            "cancelAll": [Function],
+            "getTasks": [Function],
+          },
+          "result": [Function],
+          "setContext": [Function],
+          "toPromise": [Function],
+        },
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "sagaTask": Object {
+            "@@redux-saga/TASK": true,
+            "cancel": [Function],
+            "cont": [Function],
+            "context": Object {},
+            "end": [Function],
+            "error": [Function],
+            "id": 23,
+            "isAborted": [Function],
+            "isCancelled": [Function],
+            "isRoot": true,
+            "isRunning": [Function],
+            "joiners": Array [],
+            "meta": Object {
+              "location": undefined,
+              "name": "rootSaga",
+            },
+            "queue": Object {
+              "abort": [Function],
+              "addTask": [Function],
+              "cancelAll": [Function],
+              "getTasks": [Function],
+            },
+            "result": [Function],
+            "setContext": [Function],
+            "toPromise": [Function],
+          },
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <withReduxSaga(Connect(AsyncGetInitialProps))
+    staticProp="Static message from getInitialProps()"
+  />
+</ContextProvider>
 `;
 
 exports[`Wrapped component awaits synchronous getInitialProps 1`] = `
-<Connect(SyncGetInitialProps)
-  isServer={true}
-  staticProp="Static message from getInitialProps()"
-/>
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "sagaTask": Object {
+          "@@redux-saga/TASK": true,
+          "cancel": [Function],
+          "cont": [Function],
+          "context": Object {},
+          "end": [Function],
+          "error": [Function],
+          "id": 13,
+          "isAborted": [Function],
+          "isCancelled": [Function],
+          "isRoot": true,
+          "isRunning": [Function],
+          "joiners": Array [],
+          "meta": Object {
+            "location": undefined,
+            "name": "rootSaga",
+          },
+          "queue": Object {
+            "abort": [Function],
+            "addTask": [Function],
+            "cancelAll": [Function],
+            "getTasks": [Function],
+          },
+          "result": [Function],
+          "setContext": [Function],
+          "toPromise": [Function],
+        },
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "sagaTask": Object {
+            "@@redux-saga/TASK": true,
+            "cancel": [Function],
+            "cont": [Function],
+            "context": Object {},
+            "end": [Function],
+            "error": [Function],
+            "id": 13,
+            "isAborted": [Function],
+            "isCancelled": [Function],
+            "isRoot": true,
+            "isRunning": [Function],
+            "joiners": Array [],
+            "meta": Object {
+              "location": undefined,
+              "name": "rootSaga",
+            },
+            "queue": Object {
+              "abort": [Function],
+              "addTask": [Function],
+              "cancelAll": [Function],
+              "getTasks": [Function],
+            },
+            "result": [Function],
+            "setContext": [Function],
+            "toPromise": [Function],
+          },
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <withReduxSaga(Connect(SyncGetInitialProps))
+    staticProp="Static message from getInitialProps()"
+  />
+</ContextProvider>
 `;
 
-exports[`Wrapped component passes along React props 1`] = `<Connect(FunctionalComponent) />`;
+exports[`Wrapped component passes along React props 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "sagaTask": Object {
+          "@@redux-saga/TASK": true,
+          "cancel": [Function],
+          "cont": [Function],
+          "context": Object {},
+          "end": [Function],
+          "error": [Function],
+          "id": 1,
+          "isAborted": [Function],
+          "isCancelled": [Function],
+          "isRoot": true,
+          "isRunning": [Function],
+          "joiners": Array [],
+          "meta": Object {
+            "location": undefined,
+            "name": "rootSaga",
+          },
+          "queue": Object {
+            "abort": [Function],
+            "addTask": [Function],
+            "cancelAll": [Function],
+            "getTasks": [Function],
+          },
+          "result": [Function],
+          "setContext": [Function],
+          "toPromise": [Function],
+        },
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "sagaTask": Object {
+            "@@redux-saga/TASK": true,
+            "cancel": [Function],
+            "cont": [Function],
+            "context": Object {},
+            "end": [Function],
+            "error": [Function],
+            "id": 1,
+            "isAborted": [Function],
+            "isCancelled": [Function],
+            "isRoot": true,
+            "isRunning": [Function],
+            "joiners": Array [],
+            "meta": Object {
+              "location": undefined,
+              "name": "rootSaga",
+            },
+            "queue": Object {
+              "abort": [Function],
+              "addTask": [Function],
+              "cancelAll": [Function],
+              "getTasks": [Function],
+            },
+            "result": [Function],
+            "setContext": [Function],
+            "toPromise": [Function],
+          },
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <withReduxSaga(Connect(FunctionalComponent)) />
+</ContextProvider>
+`;
 
 exports[`Wrapped component skips getInitialProps when it does not exist 1`] = `
-<Connect(ClassComponent)
-  isServer={true}
-/>
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "sagaTask": Object {
+          "@@redux-saga/TASK": true,
+          "cancel": [Function],
+          "cont": [Function],
+          "context": Object {},
+          "end": [Function],
+          "error": [Function],
+          "id": 7,
+          "isAborted": [Function],
+          "isCancelled": [Function],
+          "isRoot": true,
+          "isRunning": [Function],
+          "joiners": Array [],
+          "meta": Object {
+            "location": undefined,
+            "name": "rootSaga",
+          },
+          "queue": Object {
+            "abort": [Function],
+            "addTask": [Function],
+            "cancelAll": [Function],
+            "getTasks": [Function],
+          },
+          "result": [Function],
+          "setContext": [Function],
+          "toPromise": [Function],
+        },
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "sagaTask": Object {
+            "@@redux-saga/TASK": true,
+            "cancel": [Function],
+            "cont": [Function],
+            "context": Object {},
+            "end": [Function],
+            "error": [Function],
+            "id": 7,
+            "isAborted": [Function],
+            "isCancelled": [Function],
+            "isRoot": true,
+            "isRunning": [Function],
+            "joiners": Array [],
+            "meta": Object {
+              "location": undefined,
+              "name": "rootSaga",
+            },
+            "queue": Object {
+              "abort": [Function],
+              "addTask": [Function],
+              "cancelAll": [Function],
+              "getTasks": [Function],
+            },
+            "result": [Function],
+            "setContext": [Function],
+            "toPromise": [Function],
+          },
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <withReduxSaga(Connect(ClassComponent)) />
+</ContextProvider>
 `;

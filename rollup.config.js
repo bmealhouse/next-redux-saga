@@ -1,4 +1,4 @@
-import babel from 'rollup-plugin-babel'
+import babel from '@rollup/plugin-babel'
 import pkg from './package.json' // eslint-disable-line import/extensions
 
 export default ['umd', 'es'].map(format => ({
@@ -17,7 +17,7 @@ export default ['umd', 'es'].map(format => ({
   plugins: [
     babel({
       exclude: 'node_modules/**',
-      runtimeHelpers: true,
+      babelHelpers: 'runtime',
     }),
   ],
   external: ['react', 'redux-saga', '@babel/runtime/regenerator'],

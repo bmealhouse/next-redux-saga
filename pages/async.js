@@ -1,7 +1,11 @@
 import React, {Component} from 'react'
+
 import {string} from 'prop-types'
+
 import {connect} from 'react-redux'
+
 import withReduxSaga from '..'
+
 import Layout from '../components/layout'
 
 import {
