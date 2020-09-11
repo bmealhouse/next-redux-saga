@@ -1,4 +1,10 @@
-# next-redux-saga
+next-redux-saga
+=====
+
+# This project is no longer maintained!
+
+Because `next.js` has grown massively and other packages with bedder support have covered the `redux-saga` SSR functionality.
+See [#79](https://github.com/bmealhouse/next-redux-saga/issues/79) for more information.
 
 [![npm version](https://img.shields.io/npm/v/next-redux-saga.svg)](https://npmjs.org/package/next-redux-saga)
 [![npm downloads](https://img.shields.io/npm/dm/next-redux-saga.svg)](https://npmjs.org/package/next-redux-saga)
